@@ -1,0 +1,48 @@
+//
+//  PrefixHeader.pch
+//  Icommunity
+//
+//  Created by CKTrue on 2017/10/30.
+//  Copyright © 2017年 njsg. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "BaseViewController.h"
+#import "BaseTableView.h"
+#import "MacroDefinition.h"
+#import "YCUIHeader.h"
+#import "YCHeader.h"
+@import GoogleMaps;
+#import "ToolManager.h"
+#import <AFNetworking.h>
+#import "Masonry.h"
+#import "HttpManager.h"
+#import "JQSafeKit.h"
+#import "MJRefresh.h"
+#import "MJExtension.h"
+#import <WebKit/WebKit.h>
+#import <AVKit/AVKit.h>
+#import <AVFoundation/AVFoundation.h>
+#import "JumpVC.h"
+#import "UIImageView+WebCache.h"
+#import "SDPhotoBrowser.h"
+#import <AppAuth.h>
+#import <AppAuthCore.h>
+#import <MBProgressHUD.h>
+#import <JSONModel.h>
+#import <Toast/Toast.h>
+#import "UIView+WT.h"
+#import <MapKit/MapKit.h>
+#import "HSpeechRecognizer.h"
+#import <Kintaro/Kintaro.h>
+#import "ToyotaSearch-Swift.h"
+#import "AppDelegate.h"
+#import "SearchResultViewModel.h"
+#import "CALayer+XibBorderColor.h"
+#import "SearchResultModel.h"
+#import "UIButton+TouchOne.h"
+#endif /* PrefixHeader_pch */

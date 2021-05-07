@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="toyotatype_bold.otf">
+            <string>ToyotaTypeW02-Bold</string>
+        </array>
+        <array key="toyotatype_regular.otf">
+            <string>ToyotaTypeW02-Regular</string>
+        </array>
+        <array key="toyotatype_semibold.otf">
+            <string>ToyotaTypeW02-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Iie-dG-PEZ" customClass="LoginOutView">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOGOUT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XU5-ys-62f">
+                    <rect key="frame" x="173" y="40" width="68" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="dQf-Ad-rKi"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="ToyotaTypeW02-Bold" family="Toyota Type W02" pointSize="16"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you sure you want to log out of your My Toyota account?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0M-4U-gvr">
+                    <rect key="frame" x="42" y="80" width="330" height="39.5"/>
+                    <fontDescription key="fontDescription" name="ToyotaTypeW02-Regular" family="Toyota Type W02" pointSize="16"/>
+                    <color key="textColor" red="0.34509803921568627" green="0.34901960784313724" blue="0.35686274509803922" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u1k-oG-UjF">
+                    <rect key="frame" x="102.5" y="149.5" width="209" height="61"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="61" id="25g-hF-45a"/>
+                        <constraint firstAttribute="width" constant="209" id="5KR-VP-GWL"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="LoginOutBg">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="LoginOutBtn:" destination="Iie-dG-PEZ" eventType="touchUpInside" id="Tk6-yM-nhE"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W5I-EM-MsC">
+                    <rect key="frame" x="106.5" y="230.5" width="201" height="53"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="201" id="EXQ-Xc-5yW"/>
+                        <constraint firstAttribute="height" constant="53" id="gQP-Ei-UCy"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="ToyotaTypeW02-Semibold" family="Toyota Type W02" pointSize="16"/>
+                    <state key="normal" title="Cancel">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="ClickCancelBtn:" destination="Iie-dG-PEZ" eventType="touchUpInside" id="Lg9-fI-ahX"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yes, Logout" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwx-Dk-09y">
+                    <rect key="frame" x="102.5" y="149.5" width="204" height="56"/>
+                    <fontDescription key="fontDescription" name="ToyotaTypeW02-Semibold" family="Toyota Type W02" pointSize="16"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="W5I-EM-MsC" firstAttribute="top" secondItem="u1k-oG-UjF" secondAttribute="bottom" constant="20" id="2a5-vo-YcT"/>
+                <constraint firstItem="u1k-oG-UjF" firstAttribute="centerX" secondItem="Iie-dG-PEZ" secondAttribute="centerX" id="2uV-dz-VjV"/>
+                <constraint firstItem="XU5-ys-62f" firstAttribute="centerX" secondItem="Iie-dG-PEZ" secondAttribute="centerX" id="3iY-q1-xQD"/>
+                <constraint firstItem="gwx-Dk-09y" firstAttribute="trailing" secondItem="u1k-oG-UjF" secondAttribute="trailing" constant="-5" id="Cmf-Qx-wRG"/>
+                <constraint firstItem="u1k-oG-UjF" firstAttribute="bottom" secondItem="gwx-Dk-09y" secondAttribute="bottom" constant="5" id="GeU-Qq-Bjh"/>
+                <constraint firstItem="W5I-EM-MsC" firstAttribute="centerX" secondItem="Iie-dG-PEZ" secondAttribute="centerX" id="MXY-qI-VNh"/>
+                <constraint firstItem="G0M-4U-gvr" firstAttribute="top" secondItem="XU5-ys-62f" secondAttribute="bottom" constant="20" id="Ryx-fp-9Qw"/>
+                <constraint firstItem="XU5-ys-62f" firstAttribute="top" secondItem="Iie-dG-PEZ" secondAttribute="top" constant="40" id="Slg-uJ-dDn"/>
+                <constraint firstItem="gwx-Dk-09y" firstAttribute="leading" secondItem="u1k-oG-UjF" secondAttribute="leading" id="T1R-ex-m96"/>
+                <constraint firstItem="u1k-oG-UjF" firstAttribute="top" secondItem="G0M-4U-gvr" secondAttribute="bottom" constant="30" id="gZz-aO-4ZO"/>
+                <constraint firstItem="G0M-4U-gvr" firstAttribute="leading" secondItem="Iie-dG-PEZ" secondAttribute="leading" constant="42" id="kKc-cm-0uB"/>
+                <constraint firstItem="gwx-Dk-09y" firstAttribute="top" secondItem="u1k-oG-UjF" secondAttribute="top" id="od5-Bc-ITL"/>
+                <constraint firstAttribute="trailing" secondItem="G0M-4U-gvr" secondAttribute="trailing" constant="42" id="tB1-Xz-hM2"/>
+            </constraints>
+            <point key="canvasLocation" x="-418" y="71"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="LoginOutBg" width="209" height="61"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

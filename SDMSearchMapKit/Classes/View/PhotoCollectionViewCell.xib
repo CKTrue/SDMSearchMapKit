@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="gTV-IL-0wX" customClass="PhotoCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="98" height="98"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="98" height="98"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qmc-Cv-rAI">
+                        <rect key="frame" x="16" y="0.0" width="66" height="98"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="qmc-Cv-rAI" secondAttribute="bottom" id="GYd-9o-Hk6"/>
+                <constraint firstItem="qmc-Cv-rAI" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Gou-gx-ZnH"/>
+                <constraint firstAttribute="trailing" secondItem="qmc-Cv-rAI" secondAttribute="trailing" constant="16" id="sJh-wE-dcm"/>
+                <constraint firstItem="qmc-Cv-rAI" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="ttl-De-itK"/>
+            </constraints>
+            <size key="customSize" width="98" height="98"/>
+            <connections>
+                <outlet property="photoIMG" destination="qmc-Cv-rAI" id="e1L-fG-IEO"/>
+            </connections>
+            <point key="canvasLocation" x="249" y="269"/>
+        </collectionViewCell>
+    </objects>
+</document>

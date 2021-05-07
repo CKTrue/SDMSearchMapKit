@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="toyotatype_bold.otf">
+            <string>ToyotaTypeW02-Bold</string>
+        </array>
+        <array key="toyotatype_regular.otf">
+            <string>ToyotaTypeW02-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SDMHistoryTopView">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OlW-EY-zNP">
+                    <rect key="frame" x="0.0" y="21" width="414" height="60"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WD2-yt-IBa">
+                            <rect key="frame" x="20" y="15" width="30" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="ocl-Ya-LyD"/>
+                                <constraint firstAttribute="height" constant="30" id="tLA-Bh-Ci4"/>
+                            </constraints>
+                            <state key="normal" backgroundImage="left_arrow"/>
+                            <connections>
+                                <action selector="ClickBack:" destination="iN0-l3-epB" eventType="touchUpInside" id="d2Z-cc-igX"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recent Searches" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGU-Mu-K24">
+                            <rect key="frame" x="133" y="17.5" width="148.5" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="25" id="DZx-BU-VdE"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="ToyotaTypeW02-Bold" family="Toyota Type W02" pointSize="19"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v3l-Qo-3xL">
+                            <rect key="frame" x="314" y="15" width="80" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="GaR-Q2-E2C"/>
+                                <constraint firstAttribute="width" constant="80" id="khA-yf-deF"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="ToyotaTypeW02-Regular" family="Toyota Type W02" pointSize="16"/>
+                            <state key="normal" title="Clear All">
+                                <color key="titleColor" systemColor="systemBlueColor"/>
+                            </state>
+                            <connections>
+                                <action selector="ClickClearAll:" destination="iN0-l3-epB" eventType="touchUpInside" id="3a2-Rp-UjA"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="WD2-yt-IBa" firstAttribute="centerY" secondItem="OlW-EY-zNP" secondAttribute="centerY" id="Iix-Uy-irN"/>
+                        <constraint firstItem="cGU-Mu-K24" firstAttribute="centerX" secondItem="OlW-EY-zNP" secondAttribute="centerX" id="L9V-K1-VCi"/>
+                        <constraint firstAttribute="trailing" secondItem="v3l-Qo-3xL" secondAttribute="trailing" constant="20" id="kc6-QT-YRA"/>
+                        <constraint firstItem="cGU-Mu-K24" firstAttribute="centerY" secondItem="OlW-EY-zNP" secondAttribute="centerY" id="lAR-pX-bhH"/>
+                        <constraint firstItem="WD2-yt-IBa" firstAttribute="leading" secondItem="OlW-EY-zNP" secondAttribute="leading" constant="20" id="wc0-DJ-67u"/>
+                        <constraint firstItem="v3l-Qo-3xL" firstAttribute="centerY" secondItem="OlW-EY-zNP" secondAttribute="centerY" id="xXQ-hK-Z26"/>
+                        <constraint firstAttribute="height" constant="60" id="xbV-kO-Nnb"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foS-88-9TM">
+                    <rect key="frame" x="182" y="8" width="50" height="3"/>
+                    <color key="backgroundColor" red="0.34509803919999998" green="0.34901960780000002" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="3" id="ij2-Jb-xIz"/>
+                        <constraint firstAttribute="width" constant="50" id="uSW-iA-ljE"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="OlW-EY-zNP" secondAttribute="trailing" id="HTj-j6-Gps"/>
+                <constraint firstItem="foS-88-9TM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="Iz1-ZF-3w9"/>
+                <constraint firstItem="foS-88-9TM" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Nk9-WX-gJY"/>
+                <constraint firstItem="OlW-EY-zNP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="l2h-eu-12k"/>
+                <constraint firstItem="OlW-EY-zNP" firstAttribute="top" secondItem="foS-88-9TM" secondAttribute="bottom" constant="10" id="y3a-5I-P6R"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="76.811594202898561" y="99.776785714285708"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="left_arrow" width="24" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ToyotaType-Semibold.ttf">
+            <string>ToyotaType-Semibold</string>
+        </array>
+        <array key="toyotatype_regular.otf">
+            <string>ToyotaTypeW02-Regular</string>
+        </array>
+        <array key="toyotatype_semibold.otf">
+            <string>ToyotaTypeW02-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SDMVehicleLocationCell" rowHeight="120" id="ZSJ-Dp-xuI" customClass="SDMVehicleLocationCell">
+            <rect key="frame" x="0.0" y="0.0" width="369" height="120"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZSJ-Dp-xuI" id="a78-F4-GjY">
+                <rect key="frame" x="0.0" y="0.0" width="369" height="120"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vehicle Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nbd-wr-5C1">
+                        <rect key="frame" x="11" y="4" width="113" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="vwO-1i-6p1"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="ToyotaType-Semibold" family="Toyota Type" pointSize="12"/>
+                        <color key="textColor" red="0.58039215690000001" green="0.60784313729999995" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Tm-gG-1xc">
+                        <rect key="frame" x="0.0" y="30" width="369" height="53"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEy-qF-ltP">
+                                <rect key="frame" x="16" y="52" width="337" height="1"/>
+                                <color key="backgroundColor" red="0.76470588240000004" green="0.76862745099999996" blue="0.76862745099999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="XLk-tr-9TL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vehicle Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fH1-sE-BOY">
+                                <rect key="frame" x="56" y="0.0" width="110" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="mQo-m4-3N2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ToyotaTypeW02-Semibold" family="Toyota Type W02" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vehicleLocation" translatesAutoresizingMaskIntoConstraints="NO" id="Gao-vd-Ui3">
+                                <rect key="frame" x="16" y="6" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Gao-vd-Ui3" secondAttribute="height" id="Zpk-k0-jfp"/>
+                                    <constraint firstAttribute="width" constant="24" id="rTK-NG-bo6"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PLq-Ni-0kq">
+                                <rect key="frame" x="56" y="19" width="223" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="JAt-ep-bpo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ToyotaTypeW02-Regular" family="Toyota Type W02" pointSize="14"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BmA-cy-xmp">
+                                <rect key="frame" x="279" y="18" width="80" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="Kl3-jF-GTE"/>
+                                    <constraint firstAttribute="width" constant="80" id="Pjs-1e-wFn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ToyotaTypeW02-Regular" family="Toyota Type W02" pointSize="14"/>
+                                <color key="textColor" red="0.34509803921568627" green="0.34901960784313724" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fH1-sE-BOY" firstAttribute="leading" secondItem="Gao-vd-Ui3" secondAttribute="trailing" constant="16" id="51c-3S-Wmd"/>
+                            <constraint firstAttribute="trailing" secondItem="dEy-qF-ltP" secondAttribute="trailing" constant="16" id="5p8-vS-uXE"/>
+                            <constraint firstItem="BmA-cy-xmp" firstAttribute="centerY" secondItem="2Tm-gG-1xc" secondAttribute="centerY" id="64d-7y-SD1"/>
+                            <constraint firstItem="fH1-sE-BOY" firstAttribute="top" secondItem="2Tm-gG-1xc" secondAttribute="top" id="DNJ-YB-Tlg"/>
+                            <constraint firstAttribute="trailing" secondItem="BmA-cy-xmp" secondAttribute="trailing" constant="10" id="E5d-sX-Ml9"/>
+                            <constraint firstItem="PLq-Ni-0kq" firstAttribute="leading" secondItem="Gao-vd-Ui3" secondAttribute="trailing" constant="16" id="FXM-9X-Fis"/>
+                            <constraint firstAttribute="bottom" secondItem="PLq-Ni-0kq" secondAttribute="bottom" constant="17" id="FZ5-fk-Qf9"/>
+                            <constraint firstItem="PLq-Ni-0kq" firstAttribute="top" secondItem="fH1-sE-BOY" secondAttribute="bottom" constant="2" id="Uvj-OH-EZG"/>
+                            <constraint firstItem="Gao-vd-Ui3" firstAttribute="top" secondItem="2Tm-gG-1xc" secondAttribute="top" constant="6" id="ZcJ-ID-CQH"/>
+                            <constraint firstItem="dEy-qF-ltP" firstAttribute="leading" secondItem="2Tm-gG-1xc" secondAttribute="leading" constant="16" id="gxi-ak-mOb"/>
+                            <constraint firstItem="BmA-cy-xmp" firstAttribute="leading" secondItem="PLq-Ni-0kq" secondAttribute="trailing" id="i26-Ry-CGB"/>
+                            <constraint firstItem="Gao-vd-Ui3" firstAttribute="leading" secondItem="2Tm-gG-1xc" secondAttribute="leading" constant="16" id="mVK-K6-sa3"/>
+                            <constraint firstAttribute="bottom" secondItem="dEy-qF-ltP" secondAttribute="bottom" id="rzO-zg-gsG"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.89758472710000003" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstItem="Nbd-wr-5C1" firstAttribute="leading" secondItem="a78-F4-GjY" secondAttribute="leading" constant="11" id="4vU-kS-dbR"/>
+                    <constraint firstItem="2Tm-gG-1xc" firstAttribute="top" secondItem="Nbd-wr-5C1" secondAttribute="bottom" constant="9" id="LTt-6j-szy"/>
+                    <constraint firstItem="Nbd-wr-5C1" firstAttribute="top" secondItem="a78-F4-GjY" secondAttribute="top" constant="4" id="PQk-Lb-cbv"/>
+                    <constraint firstItem="2Tm-gG-1xc" firstAttribute="leading" secondItem="a78-F4-GjY" secondAttribute="leading" id="hUh-CD-E63"/>
+                    <constraint firstAttribute="trailing" secondItem="2Tm-gG-1xc" secondAttribute="trailing" id="oKI-dc-U3J"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="IqN-Th-vUf"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="AddressLabel" destination="PLq-Ni-0kq" id="WP8-oy-3S6"/>
+                <outlet property="DistanceLabel" destination="BmA-cy-xmp" id="P9i-90-p1I"/>
+            </connections>
+            <point key="canvasLocation" x="57.24637681159421" y="12.723214285714285"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="vehicleLocation" width="25.5" height="24"/>
+    </resources>
+</document>

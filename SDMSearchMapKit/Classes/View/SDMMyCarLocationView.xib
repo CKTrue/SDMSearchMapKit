@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="toyotatype_bold.otf">
+            <string>ToyotaTypeW02-Bold</string>
+        </array>
+        <array key="toyotatype_regular.otf">
+            <string>ToyotaTypeW02-Regular</string>
+        </array>
+        <array key="toyotatype_semibold.otf">
+            <string>ToyotaTypeW02-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="iN0-l3-epB" customClass="SDMMyCarLocationView">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85H-a9-6Oh">
+                    <rect key="frame" x="182" y="52" width="50" height="3"/>
+                    <color key="backgroundColor" red="0.34509803919999998" green="0.34901960780000002" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="HKq-lZ-Kmr"/>
+                        <constraint firstAttribute="height" constant="3" id="fbh-Vm-zP2"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prius Prime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcV-dc-CK3">
+                    <rect key="frame" x="16" y="71" width="238" height="20"/>
+                    <fontDescription key="fontDescription" name="ToyotaTypeW02-Bold" family="Toyota Type W02" pointSize="16"/>
+                    <color key="textColor" systemColor="systemBlueColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VO4-KF-Wis">
+                    <rect key="frame" x="304" y="68.5" width="100" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="atD-Ga-4Yi"/>
+                        <constraint firstAttribute="height" constant="25" id="h8G-99-hhw"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="ToyotaTypeW02-Regular" family="Toyota Type W02" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vehicle color:silver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EsJ-vn-Wkm">
+                    <rect key="frame" x="16" y="96" width="132" height="0.0"/>
+                    <constraints>
+                        <constraint firstAttribute="height" id="PYE-NH-FD0"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="ToyotaTypeW02-Regular" family="Toyota Type W02" pointSize="15"/>
+                    <color key="textColor" red="0.34509803921568627" green="0.34901960784313724" blue="0.0" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="045-wy-IU6">
+                    <rect key="frame" x="16" y="101" width="120" height="0.0"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="あ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HvQ-Vs-3ty">
+                            <rect key="frame" x="5" y="0.0" width="20" height="0.0"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="20" id="iFR-K0-Ree"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.34509803921568627" green="0.34901960784313724" blue="0.35686274509803922" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名古屋 100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYx-w8-Ias">
+                            <rect key="frame" x="30" y="10" width="90" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="uxX-F6-0Vk"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="ToyotaTypeW02-Regular" family="Toyota Type W02" pointSize="14"/>
+                            <color key="textColor" red="0.34509803921568627" green="0.34901960784313724" blue="0.35686274509803922" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="57-42" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Efb-5h-E73">
+                            <rect key="frame" x="30" y="35" width="90" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="86Y-gz-BcO"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="ToyotaTypeW02-Semibold" family="Toyota Type W02" pointSize="16"/>
+                            <color key="textColor" red="0.34509803921568627" green="0.34901960784313724" blue="0.35686274509803922" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="Efb-5h-E73" firstAttribute="top" secondItem="hYx-w8-Ias" secondAttribute="bottom" constant="5" id="8PQ-04-lJF"/>
+                        <constraint firstAttribute="trailing" secondItem="Efb-5h-E73" secondAttribute="trailing" id="IzZ-6k-4QM"/>
+                        <constraint firstItem="HvQ-Vs-3ty" firstAttribute="leading" secondItem="045-wy-IU6" secondAttribute="leading" constant="5" id="J23-yX-FD5"/>
+                        <constraint firstAttribute="trailing" secondItem="hYx-w8-Ias" secondAttribute="trailing" id="Vpl-4r-qMh"/>
+                        <constraint firstItem="hYx-w8-Ias" firstAttribute="leading" secondItem="HvQ-Vs-3ty" secondAttribute="trailing" constant="5" id="WEy-Dt-3Cr"/>
+                        <constraint firstAttribute="height" id="YZG-s2-fEL"/>
+                        <constraint firstAttribute="width" constant="120" id="cqO-TA-IMs"/>
+                        <constraint firstItem="Efb-5h-E73" firstAttribute="leading" secondItem="HvQ-Vs-3ty" secondAttribute="trailing" constant="5" id="dDM-4y-cHU"/>
+                        <constraint firstItem="hYx-w8-Ias" firstAttribute="top" secondItem="045-wy-IU6" secondAttribute="top" constant="10" id="ndP-qY-Cgw"/>
+                        <constraint firstItem="HvQ-Vs-3ty" firstAttribute="top" secondItem="045-wy-IU6" secondAttribute="top" id="uj7-4K-g0n"/>
+                        <constraint firstAttribute="bottom" secondItem="HvQ-Vs-3ty" secondAttribute="bottom" id="yYR-np-1GW"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColorWithUIColor">
+                            <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zvc-ma-eQG">
+                    <rect key="frame" x="16" y="111" width="382" height="1"/>
+                    <color key="backgroundColor" red="0.76862745098039209" green="0.76862745098039209" blue="0.76862745098039209" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="j8M-x8-1PR"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nq0-05-p4x">
+                    <rect key="frame" x="16" y="117" width="382" height="100"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rm0-FH-Mbb">
+                            <rect key="frame" x="34" y="0.0" width="288" height="70"/>
+                            <fontDescription key="fontDescription" name="ToyotaTypeW02-Regular" family="Toyota Type W02" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="markericon" translatesAutoresizingMaskIntoConstraints="NO" id="yrm-I8-AUZ">
+                            <rect key="frame" x="0.0" y="38" width="24" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="24" id="OiV-uN-Fg5"/>
+                                <constraint firstAttribute="height" constant="24" id="bEb-q5-ctW"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAF-IP-aW8">
+                            <rect key="frame" x="34" y="70" width="314" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="Ica-ZL-VQW"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="ToyotaTypeW02-Regular" family="Toyota Type W02" pointSize="14"/>
+                            <color key="textColor" red="0.34509803921568627" green="0.34901960784313724" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecH-WU-2HQ">
+                            <rect key="frame" x="322" y="0.0" width="60" height="100"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="60" id="CRJ-6o-Dwg"/>
+                            </constraints>
+                            <state key="normal" image="right_arrow"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="Rm0-FH-Mbb" secondAttribute="bottom" constant="30" id="0NK-js-85g"/>
+                        <constraint firstItem="Rm0-FH-Mbb" firstAttribute="top" secondItem="nq0-05-p4x" secondAttribute="top" id="7Ej-wa-RXb"/>
+                        <constraint firstItem="kAF-IP-aW8" firstAttribute="leading" secondItem="nq0-05-p4x" secondAttribute="leading" constant="34" id="KWf-IN-VOs"/>
+                        <constraint firstAttribute="height" constant="100" id="KcL-bq-QOX"/>
+                        <constraint firstItem="yrm-I8-AUZ" firstAttribute="centerY" secondItem="nq0-05-p4x" secondAttribute="centerY" id="NcY-ET-M0y"/>
+                        <constraint firstAttribute="trailing" secondItem="kAF-IP-aW8" secondAttribute="trailing" constant="34" id="OGv-Pc-HeS"/>
+                        <constraint firstItem="yrm-I8-AUZ" firstAttribute="leading" secondItem="nq0-05-p4x" secondAttribute="leading" id="SUy-8p-e7E"/>
+                        <constraint firstAttribute="bottom" secondItem="ecH-WU-2HQ" secondAttribute="bottom" id="XH5-87-dVH"/>
+                        <constraint firstItem="ecH-WU-2HQ" firstAttribute="top" secondItem="nq0-05-p4x" secondAttribute="top" id="Xof-V4-DfG"/>
+                        <constraint firstAttribute="trailing" secondItem="ecH-WU-2HQ" secondAttribute="trailing" id="jLt-V5-bRn"/>
+                        <constraint firstItem="kAF-IP-aW8" firstAttribute="top" secondItem="Rm0-FH-Mbb" secondAttribute="bottom" id="o7o-K0-nh2"/>
+                        <constraint firstItem="Rm0-FH-Mbb" firstAttribute="leading" secondItem="yrm-I8-AUZ" secondAttribute="trailing" constant="10" id="w3L-6X-zkr"/>
+                        <constraint firstAttribute="trailing" secondItem="Rm0-FH-Mbb" secondAttribute="trailing" constant="60" id="xmy-Wc-azg"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20c-4q-aeN">
+                    <rect key="frame" x="30" y="267" width="354" height="56"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="56" id="qIj-8U-KOE"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="ToyotaTypeW02-Bold" family="Toyota Type W02" pointSize="16"/>
+                    <state key="normal" title="Navigate">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="28"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="ClickNavigate:" destination="iN0-l3-epB" eventType="touchUpInside" id="CEb-lj-PBo"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="EsJ-vn-Wkm" firstAttribute="top" secondItem="gcV-dc-CK3" secondAttribute="bottom" constant="5" id="2Eo-AJ-GN7"/>
+                <constraint firstItem="VO4-KF-Wis" firstAttribute="centerY" secondItem="gcV-dc-CK3" secondAttribute="centerY" id="334-Ct-Gqf"/>
+                <constraint firstItem="045-wy-IU6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="6YJ-Ds-uXq"/>
+                <constraint firstItem="VO4-KF-Wis" firstAttribute="leading" secondItem="gcV-dc-CK3" secondAttribute="trailing" constant="50" id="9BV-SN-rE8"/>
+                <constraint firstItem="85H-a9-6Oh" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="IDI-u4-TXK"/>
+                <constraint firstItem="85H-a9-6Oh" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="J3K-vX-hyt"/>
+                <constraint firstItem="Zvc-ma-eQG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="MxX-Ik-CZM"/>
+                <constraint firstItem="Zvc-ma-eQG" firstAttribute="top" secondItem="045-wy-IU6" secondAttribute="bottom" constant="10" id="SjN-Et-CqB"/>
+                <constraint firstItem="gcV-dc-CK3" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="TTT-kg-C5T"/>
+                <constraint firstItem="nq0-05-p4x" firstAttribute="top" secondItem="Zvc-ma-eQG" secondAttribute="bottom" constant="5" id="Wf4-66-hYa"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="VO4-KF-Wis" secondAttribute="trailing" constant="10" id="YV1-TW-Go6"/>
+                <constraint firstItem="EsJ-vn-Wkm" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="ahp-eF-EG8"/>
+                <constraint firstItem="20c-4q-aeN" firstAttribute="top" secondItem="nq0-05-p4x" secondAttribute="bottom" constant="50" id="eaP-f7-sHp"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Zvc-ma-eQG" secondAttribute="trailing" constant="16" id="hT9-VS-r4C"/>
+                <constraint firstItem="gcV-dc-CK3" firstAttribute="top" secondItem="85H-a9-6Oh" secondAttribute="bottom" constant="16" id="iGt-dP-DRh"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="20c-4q-aeN" secondAttribute="trailing" constant="30" id="iQe-lK-DCG"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="nq0-05-p4x" secondAttribute="trailing" constant="16" id="jXi-57-ca1"/>
+                <constraint firstItem="20c-4q-aeN" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="jqW-Tc-Isc"/>
+                <constraint firstItem="20c-4q-aeN" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ltm-iA-TDq"/>
+                <constraint firstItem="045-wy-IU6" firstAttribute="top" secondItem="EsJ-vn-Wkm" secondAttribute="bottom" constant="5" id="vgb-pO-SGt"/>
+                <constraint firstItem="nq0-05-p4x" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="xUX-hX-tbk"/>
+            </constraints>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="10"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="LocationLabel" destination="Rm0-FH-Mbb" id="BWa-45-upg"/>
+                <outlet property="NavigateBtn" destination="20c-4q-aeN" id="y4I-sm-f5M"/>
+                <outlet property="TimeLabel" destination="kAF-IP-aW8" id="9qs-lG-DMi"/>
+                <outlet property="distancelabel" destination="VO4-KF-Wis" id="m6v-Jt-V8T"/>
+            </connections>
+            <point key="canvasLocation" x="65.217391304347828" y="-98.4375"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="markericon" width="40" height="40"/>
+        <image name="right_arrow" width="24" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
