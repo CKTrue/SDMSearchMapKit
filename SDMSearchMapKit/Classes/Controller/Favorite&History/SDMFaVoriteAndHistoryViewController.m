@@ -30,7 +30,8 @@
     self.searchView.hidden=YES;
     self.landView.hidden=YES;
     if(self.GotoFavorite==YES){
-    self.FavoriteVC=[[SDMFavoriteViewController alloc]initWithNibName:@"SDMFavoriteViewController" bundle:nil];
+    self.FavoriteVC=[[SDMFavoriteViewController alloc]initWithNibName:@"SDMFavoriteViewController" bundle:[[ToolManager shareManager] subBundleWithBundleName]];
+        
     [self addChildViewController:self.FavoriteVC];
     self.FavoriteVC.view.frame=self.shadowView.bounds;
     [self.shadowView addSubview:self.FavoriteVC.view];
@@ -41,7 +42,7 @@
         [self.FavoriteVC.favoriteTopView addGestureRecognizer:pan];
     }else{
         
-        self.HistoryVC=[[SDMHistoryViewController alloc]initWithNibName:@"SDMHistoryViewController" bundle:nil];
+        self.HistoryVC=[[SDMHistoryViewController alloc]initWithNibName:@"SDMHistoryViewController" bundle:[[ToolManager shareManager] subBundleWithBundleName]];
         [self addChildViewController:self.HistoryVC];
         self.HistoryVC.view.frame=self.shadowView.bounds;
         [self.shadowView addSubview:self.HistoryVC.view];

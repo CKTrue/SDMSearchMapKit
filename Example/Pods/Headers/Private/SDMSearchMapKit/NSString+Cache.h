@@ -1,0 +1,1 @@
+../../../../../SDMSearchMapKit/Classes/Thirty/HttpManager/NSString+Cache.h

@@ -14,8 +14,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MapBaseViewController : BaseViewController
-@property (nonatomic,strong) GMSMarker *marker;//大头针
-@property(nonatomic,strong)GMSMapView*mapView;
+//@property (nonatomic,strong) GMSMarker *marker;//大头针
+//@property(nonatomic,strong)GMSMapView*mapView;
 @property(nonatomic,strong)SearchView*searchView;
 @property (strong, nonatomic) UIView *LandgingScreenView;
 @property(strong,nonatomic)SDMLandingView*landView;

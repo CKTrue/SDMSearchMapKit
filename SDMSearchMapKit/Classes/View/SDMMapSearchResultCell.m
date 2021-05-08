@@ -16,18 +16,11 @@
 -(void)setModel:(SearchResultModel *)Model{
     _Model=Model;
     
-//
-//    if([Model.local_provider_enum intValue]==2){
-//        [self.HeadImgV setImage:[UIImage imageNamed:@"toyota"]];
-//        self.TitleLabel.text=[NSString stringWithFormat:@"%@",Model.title];
-//        self.DescLabel.text=[NSString stringWithFormat:@"%@",Model.sub_title];
-//        self.VRBtn.hidden=YES;
-//
-//    }
-//
+
     if([Model.local_provider_enum intValue]==6){
         
-        [self.HeadImgV setImage:[UIImage imageNamed:@"gis"]];
+        [self.HeadImgV setImage:[[ToolManager shareManager] creatZhujianImgView:@"gis"]];
+
         self.TitleLabel.text=[NSString stringWithFormat:@"%@",Model.name];
         self.DescLabel.text=[NSString stringWithFormat:@"%@",Model.address];
 

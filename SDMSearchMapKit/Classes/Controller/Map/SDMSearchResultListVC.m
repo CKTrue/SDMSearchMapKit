@@ -30,7 +30,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.titleLabel.text=@"Search Results";
-    [self.SearchListTableV registerNib:[UINib nibWithNibName:@"SearchResultCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"SearchResultCell"];
+    [self.SearchListTableV registerNib:[UINib nibWithNibName:@"SearchResultCell" bundle:[[ToolManager shareManager] subBundleWithBundleName]] forCellReuseIdentifier:@"SearchResultCell"];
     self.SearchListTableV.delegate=self;
     self.SearchListTableV.dataSource=self;
     self.SearchListTableV.refreshDelegate=self;

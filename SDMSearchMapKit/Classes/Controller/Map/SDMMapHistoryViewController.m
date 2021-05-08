@@ -117,7 +117,7 @@
         
     }else{
         self.searchView.SearchTF.text=@"";
-        [self.searchView.checkPasswordBtn setImage:[UIImage imageNamed:@"mic"] forState:UIControlStateNormal];
+        [self.searchView.checkPasswordBtn setImage:[[ToolManager shareManager] creatZhujianImgView:@"mic"] forState:UIControlStateNormal];
         
         [_ReslutTableView removeFromSuperview];
         
@@ -160,9 +160,7 @@
     [HSpeechRecognizer share].Language= [UIApplication sharedApplication].delegate.window.textInputMode.primaryLanguage;
 }
 
--(void)mapView:(GMSMapView *)mapView willMove:(BOOL)gesture{
-    [self.searchView.SearchTF endEditing:YES];
-}
+
 #pragma mark---------searchTF
 -(void)ShowSearchView{
     
@@ -170,8 +168,8 @@
     [self.searchView.SearchTF becomeFirstResponder];
     [self.searchView.SearchTF addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     [self.searchView.checkPasswordBtn addTarget:self action:@selector(VoiceSpeech) forControlEvents:UIControlEventTouchUpInside];
-    [self.searchView.backBtn setImage:[UIImage imageNamed:@"left_arrow"] forState:UIControlStateNormal];
-    
+    [self.searchView.backBtn setImage:[[ToolManager shareManager] creatZhujianImgView:@"left_arrow"] forState:UIControlStateNormal];
+
     self.MyLocationBtn.frame=CGRectMake(SCREEN_WIDTH-66,SCREEN_HEIGHT-TabBarHeight-66, 56, 56);
     
     
@@ -188,7 +186,7 @@
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
     kWeakSelf;
     if (self.searchView.SearchTF.text.length==0) {
-        [self.searchView.checkPasswordBtn setImage:[UIImage imageNamed:@"mic"] forState:UIControlStateNormal];
+        [self.searchView.checkPasswordBtn setImage:[[ToolManager shareManager] creatZhujianImgView:@"mic"] forState:UIControlStateNormal];
             [self.HistoryScrollView setContentOffset:CGPointMake(0, 0) animated:YES];
             [UIView animateWithDuration:0.2 animations:^{
                 
@@ -196,7 +194,7 @@
             }];
         
     }else{
-        [self.searchView.checkPasswordBtn setImage:[UIImage imageNamed:@"close"] forState:UIControlStateNormal];
+        [self.searchView.checkPasswordBtn setImage:[[ToolManager shareManager] creatZhujianImgView:@"close"] forState:UIControlStateNormal];
         [UIView animateWithDuration:0.2 animations:^{
             
             weakSelf.HistoryScrollView.frame=CGRectMake(8, SCREEN_HEIGHT, SCREEN_WIDTH-16, SCREEN_HEIGHT-Y1-TabBarHeight);
@@ -206,7 +204,7 @@
 -(void)textFieldDidEndEditing:(UITextField *)textField{
     kWeakSelf;
     if (self.searchView.SearchTF.text.length==0){
-        [self.searchView.checkPasswordBtn setImage:[UIImage imageNamed:@"mic"] forState:UIControlStateNormal];
+        [self.searchView.checkPasswordBtn setImage:[[ToolManager shareManager] creatZhujianImgView:@"mic"] forState:UIControlStateNormal];
         [self.HistoryScrollView setContentOffset:CGPointMake(0, 0) animated:YES];
         [UIView animateWithDuration:0.2 animations:^{
             
@@ -214,7 +212,7 @@
         }];
         
     }else{
-        [self.searchView.checkPasswordBtn setImage:[UIImage imageNamed:@"close"] forState:UIControlStateNormal];
+        [self.searchView.checkPasswordBtn setImage:[[ToolManager shareManager] creatZhujianImgView:@"close"] forState:UIControlStateNormal];
         [UIView animateWithDuration:0.2 animations:^{
             
             weakSelf.HistoryScrollView.frame=CGRectMake(8, SCREEN_HEIGHT, SCREEN_WIDTH-16, SCREEN_HEIGHT-Y1-TabBarHeight);
@@ -230,7 +228,7 @@
     if(textField.text.length==0){
         [_ReslutTableView removeFromSuperview];
         [self.searchView.activityIndicator stopAnimating];
-        [self.searchView.checkPasswordBtn setImage:[UIImage imageNamed:@"mic"] forState:UIControlStateNormal];
+        [self.searchView.checkPasswordBtn setImage:[[ToolManager shareManager] creatZhujianImgView:@"mic"] forState:UIControlStateNormal];
         [self.HistoryScrollView setContentOffset:CGPointMake(0, 0) animated:YES];
         [UIView animateWithDuration:0.2 animations:^{
             
@@ -238,7 +236,7 @@
         }];
         
     }else{
-        [self.searchView.checkPasswordBtn setImage:[UIImage imageNamed:@"close"] forState:UIControlStateNormal];
+        [self.searchView.checkPasswordBtn setImage:[[ToolManager shareManager] creatZhujianImgView:@"close"] forState:UIControlStateNormal];
         [UIView animateWithDuration:0.2 animations:^{
             
             weakSelf.HistoryScrollView.frame=CGRectMake(8, SCREEN_HEIGHT, SCREEN_WIDTH-16, SCREEN_HEIGHT-Y1-TabBarHeight);
@@ -267,7 +265,7 @@
         NSString* lng=[NSString stringWithFormat:@"%@",DEF_PERSISTENT_GET_OBJECT(@"userLng")];
        
         
-        [[SearchResultViewModel defaultModel] requestSearchSuggestSuccess:self.searchView.SearchTF.text MapSearchRadius:[[ToolManager shareManager] GetDistanceByMapScale:self.mapView.camera.zoom] Lat:lat Lng:lng succeed:^(id  _Nonnull data) {
+        [[SearchResultViewModel defaultModel] requestSearchSuggestSuccess:self.searchView.SearchTF.text MapSearchRadius:[[ToolManager shareManager] GetDistanceByMapScale:0] Lat:lat Lng:lng succeed:^(id  _Nonnull data) {
             weakSelf.ResponseListModel=[[SearchResultModel alloc]init];
             weakSelf.ResultHeight=0;
 
@@ -355,19 +353,19 @@
 
 #pragma mark-----------语音识别
 -(void)VoiceSpeech{
-    if ([self.searchView.checkPasswordBtn.currentImage isEqual:[UIImage imageNamed:@"close"]]) {
+    if ([self.searchView.checkPasswordBtn.currentImage isEqual:[[ToolManager shareManager]creatZhujianImgView:@"close"]]) {
         kWeakSelf;
             self.searchView.SearchTF.text=@"";
         [self.searchView.SearchTF becomeFirstResponder];
             [_ReslutTableView removeFromSuperview];
-            [self.searchView.checkPasswordBtn setImage:[UIImage imageNamed:@"mic"] forState:UIControlStateNormal];
+        [self.searchView.checkPasswordBtn setImage:[[ToolManager shareManager] creatZhujianImgView:@"mic"] forState:UIControlStateNormal];
             [UIView animateWithDuration:0.2 animations:^{
                 
                 weakSelf.HistoryScrollView.frame=CGRectMake(8, Y1, SCREEN_WIDTH-16, SCREEN_HEIGHT-Y1-TabBarHeight);
             }];
        
     }
-    else if ([self.searchView.checkPasswordBtn.currentImage isEqual:[UIImage imageNamed:@"mic"]]) {
+    else if ([self.searchView.checkPasswordBtn.currentImage isEqual:[[ToolManager shareManager]creatZhujianImgView:@"mic"]]) {
         
         
           // [self CreateVoiceView];
@@ -380,7 +378,8 @@
 
 #pragma mark----------创建录音页面
 -(void)CreateVoiceView{
-    self.speechView=[[[NSBundle mainBundle]loadNibNamed:@"VoiceSpeechView" owner:self options:nil]lastObject];
+    self.speechView=(VoiceSpeechView*)[[ToolManager shareManager] creatAllreadAlterView:@"VoiceSpeechView"];
+;
     self.speechView.frame=CGRectMake(0, SCREEN_HEIGHT-270, SCREEN_WIDTH, 270);
     UIWindow*window=[UIApplication sharedApplication].keyWindow;
     MengView=[[UIView alloc]initWithFrame:window.bounds];
@@ -425,7 +424,7 @@
         
         self.HistoryScrollView.delegate=self;
         self.HistoryScrollView.backgroundColor=[UIColor whiteColor];
-        _historyView=[[[NSBundle mainBundle]loadNibNamed:@"MapHistoryView" owner:self options:nil]lastObject];
+        _historyView=(MapHistoryView*)[[ToolManager shareManager] creatAllreadAlterView:@"MapHistoryView"];
         _historyView.frame=self.HistoryScrollView.bounds;
         self.historyView.MapHistoryTabV.scrollsToTop=NO;
         
@@ -459,28 +458,28 @@
      distance=[[ToolManager shareManager] getDistanceMetresBetweenLocationCoordinatesLocation1:coor Location2:coor2];
     self.historyView.MyCarDistanceLabel.text=[[ToolManager shareManager] setDistanceStr:distance];
   
-    [[GMSGeocoder geocoder] reverseGeocodeCoordinate:coor2 completionHandler:^(GMSReverseGeocodeResponse * response, NSError * error) {
-        
-        GMSAddress* addressObj=[response results].firstObject;
-        NSString*str=@"";
-        if (addressObj.thoroughfare) {
-            str= [str stringByAppendingString:[NSString stringWithFormat:@"%@",addressObj.thoroughfare]];
-        }
-        if (addressObj.subLocality) {
-            str= [str stringByAppendingString:[NSString stringWithFormat:@",%@",addressObj.subLocality]];
-        }
-        if (addressObj.locality) {
-            str= [str stringByAppendingString:[NSString stringWithFormat:@",%@",addressObj.locality]];
-        }
-        if (addressObj.administrativeArea) {
-            str= [str stringByAppendingString:[NSString stringWithFormat:@",%@",addressObj.administrativeArea]];
-        }
-        if (addressObj.country) {
-            str= [str stringByAppendingString:[NSString stringWithFormat:@",%@",addressObj.country]];
-        }
-        weakSelf.historyView.MyCarAddressLabel.text=str;
-        
-    }];
+//    [[GMSGeocoder geocoder] reverseGeocodeCoordinate:coor2 completionHandler:^(GMSReverseGeocodeResponse * response, NSError * error) {
+//        
+//        GMSAddress* addressObj=[response results].firstObject;
+//        NSString*str=@"";
+//        if (addressObj.thoroughfare) {
+//            str= [str stringByAppendingString:[NSString stringWithFormat:@"%@",addressObj.thoroughfare]];
+//        }
+//        if (addressObj.subLocality) {
+//            str= [str stringByAppendingString:[NSString stringWithFormat:@",%@",addressObj.subLocality]];
+//        }
+//        if (addressObj.locality) {
+//            str= [str stringByAppendingString:[NSString stringWithFormat:@",%@",addressObj.locality]];
+//        }
+//        if (addressObj.administrativeArea) {
+//            str= [str stringByAppendingString:[NSString stringWithFormat:@",%@",addressObj.administrativeArea]];
+//        }
+//        if (addressObj.country) {
+//            str= [str stringByAppendingString:[NSString stringWithFormat:@",%@",addressObj.country]];
+//        }
+//        weakSelf.historyView.MyCarAddressLabel.text=str;
+//        
+//    }];
     
     
     
@@ -525,12 +524,12 @@
         _ReslutTableView=[[BaseTableView alloc]init];
         _ReslutTableView.backgroundColor=[UIColor clearColor];
         _ReslutTableView.separatorColor=[UIColor clearColor];
-        [_ReslutTableView registerNib:[UINib nibWithNibName:@"SearchResultCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"SearchResultCell"];
-        [_ReslutTableView registerNib:[UINib nibWithNibName:@"SDMDrivingRangeCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"SDMDrivingRangeCell"];
-        [_ReslutTableView registerNib:[UINib nibWithNibName:@"SDMMapSearchResultCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"SDMMapSearchResultCell"];
-        [_ReslutTableView registerNib:[UINib nibWithNibName:@"MapSearchOtherCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"MapSearchOtherCell"];
-        [_ReslutTableView registerNib:[UINib nibWithNibName:@"CallRSACell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"CallRSACell"];
-        [_ReslutTableView registerNib:[UINib nibWithNibName:@"SDMVehicleLocationCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"SDMVehicleLocationCell"];
+        [_ReslutTableView registerNib:[UINib nibWithNibName:@"SearchResultCell" bundle:[[ToolManager shareManager] subBundleWithBundleName]] forCellReuseIdentifier:@"SearchResultCell"];
+        [_ReslutTableView registerNib:[UINib nibWithNibName:@"SDMDrivingRangeCell" bundle:[[ToolManager shareManager] subBundleWithBundleName]] forCellReuseIdentifier:@"SDMDrivingRangeCell"];
+        [_ReslutTableView registerNib:[UINib nibWithNibName:@"SDMMapSearchResultCell" bundle:[[ToolManager shareManager] subBundleWithBundleName]] forCellReuseIdentifier:@"SDMMapSearchResultCell"];
+        [_ReslutTableView registerNib:[UINib nibWithNibName:@"MapSearchOtherCell" bundle:[[ToolManager shareManager] subBundleWithBundleName]] forCellReuseIdentifier:@"MapSearchOtherCell"];
+        [_ReslutTableView registerNib:[UINib nibWithNibName:@"CallRSACell" bundle:[[ToolManager shareManager] subBundleWithBundleName]] forCellReuseIdentifier:@"CallRSACell"];
+        [_ReslutTableView registerNib:[UINib nibWithNibName:@"SDMVehicleLocationCell" bundle:[[ToolManager shareManager] subBundleWithBundleName]] forCellReuseIdentifier:@"SDMVehicleLocationCell"];
 
         _ReslutTableView.bounces=NO;
     }
@@ -775,9 +774,9 @@
         vc.SearchStr=self.searchView.SearchTF.text;
         [self.navigationController pushViewController:vc animated:NO];
     }else{
-        SDMSearchResultListVC*searchlistVC=[[SDMSearchResultListVC alloc]init];
+        SDMSearchResultListVC*searchlistVC=[[SDMSearchResultListVC alloc]initWithNibName:@"SDMSearchResultListVC" bundle:[[ToolManager shareManager] subBundleWithBundleName]];
         searchlistVC.hidesBottomBarWhenPushed=YES;
-        [searchlistVC setResultModel:cell.Model WithSearchStr:self.searchView.SearchTF.text AndMapScale:self.mapView.camera.zoom];
+        [searchlistVC setResultModel:cell.Model WithSearchStr:self.searchView.SearchTF.text AndMapScale:0];
         
         [self.navigationController pushViewController:searchlistVC animated:NO];
         
@@ -835,9 +834,9 @@
         vc.SearchStr=self.searchView.SearchTF.text;
         [self.navigationController pushViewController:vc animated:NO];
     }else{
-        SDMSearchResultListVC*searchlistVC=[[SDMSearchResultListVC alloc]init];
+        SDMSearchResultListVC*searchlistVC=[[SDMSearchResultListVC alloc]initWithNibName:@"SDMSearchResultListVC" bundle:[[ToolManager shareManager] subBundleWithBundleName]];
         searchlistVC.hidesBottomBarWhenPushed=YES;
-        [searchlistVC setResultModel:cell.Model WithSearchStr:self.searchView.SearchTF.text AndMapScale:self.mapView.camera.zoom];
+        [searchlistVC setResultModel:cell.Model WithSearchStr:self.searchView.SearchTF.text AndMapScale:0];
         
         [self.navigationController pushViewController:searchlistVC animated:NO];
         

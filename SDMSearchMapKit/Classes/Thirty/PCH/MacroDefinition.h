@@ -16,6 +16,11 @@
 #define NavBarHeight (44+StatusBar_HEIGHT)
 #define OtherHeight  (44+StatusBar_HEIGHT+BottomHeight)
 
+#define XibBundle   NSBundle *bundle = [NSBundle bundleForClass:[self class]];\
+NSString *path = [bundle pathForResource:@"SDMSearchMapKit" ofType:@"bundle"];\
+return [NSBundle bundleWithPath:path];\
+
+
 
 //获取屏幕 宽度、高度
 #define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
@@ -191,7 +196,7 @@ description:__VA_ARGS__];                             \
 //定义UIImage对象
 #define ImageNamed(_pointer) [UIImage imageNamed:_pointer]
 
-#define ImageWithContentOfFile(_pointer) [UIImage imageWithContentsOfFile:[[[NSBundle mainBundle]resourcePath]stringByAppendingPathComponent:_pointer]]
+#define ImageWithContentOfFile(_pointer) [UIImage imageWithContentsOfFile:[[[[ToolManager shareManager] subBundleWithBundleName]resourcePath]stringByAppendingPathComponent:_pointer]]
 
 
 //----------------------颜色类---------------------------

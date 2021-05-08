@@ -40,7 +40,7 @@
     // Do any additional setup after loading the view from its nib.
     self.titleLabel.text=@"Histories";
     self.pageNum=0;
-    [self.SDMHistoryTabV registerNib:[UINib nibWithNibName:@"SearchResultCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"SearchResultCell"];
+    [self.SDMHistoryTabV registerNib:[UINib nibWithNibName:@"SearchResultCell" bundle:[[ToolManager shareManager] subBundleWithBundleName]] forCellReuseIdentifier:@"SearchResultCell"];
     self.SDMHistoryTabV.delegate=self;
     self.SDMHistoryTabV.refreshStyle=RefreshStyleOnlyLoad;
     self.SDMHistoryTabV.refreshDelegate=self;
@@ -245,7 +245,7 @@
         [weakSelf presentViewController:CancelAlertViewController animated:YES completion:nil];
         
     }];
-    DeleteAction.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"delete_slider"]];
+    DeleteAction.backgroundColor=[UIColor colorWithPatternImage:[[ToolManager shareManager] creatZhujianImgView:@"delete_slider"]];
 
       
     

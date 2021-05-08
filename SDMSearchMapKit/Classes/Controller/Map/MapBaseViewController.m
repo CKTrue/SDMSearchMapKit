@@ -11,7 +11,7 @@
 #import "SearchResultModel.h"
 #import "SDMSearchResultListVC.h"
 #import "TempOneView.h"
-@interface MapBaseViewController ()<GMSMapViewDelegate,UIGestureRecognizerDelegate>
+@interface MapBaseViewController ()<UIGestureRecognizerDelegate>
 @property(nonatomic,strong)SearchResultModel*resultModel;
 
 @end
@@ -27,25 +27,26 @@
         lat=[DEF_PERSISTENT_GET_OBJECT(@"userLat") doubleValue];
         lng=[DEF_PERSISTENT_GET_OBJECT(@"userLng") doubleValue];
     }
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:lat longitude:lng zoom:12];
-       _mapView= [GMSMapView mapWithFrame:CGRectZero camera:camera];
-       _mapView.delegate = self;
-       _mapView.frame=CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-       _mapView.settings.compassButton = YES;
-       _mapView.myLocationEnabled = YES;
-       _mapView.settings.myLocationButton = NO;
-       [_mapView setMinZoom:1 maxZoom:19];
-
-       [self.view addSubview:_mapView];
+//    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:lat longitude:lng zoom:12];
+//       _mapView= [GMSMapView mapWithFrame:CGRectZero camera:camera];
+//       _mapView.delegate = self;
+//       _mapView.frame=CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+//       _mapView.settings.compassButton = YES;
+//       _mapView.myLocationEnabled = YES;
+//       _mapView.settings.myLocationButton = NO;
+//       [_mapView setMinZoom:1 maxZoom:19];
+//
+//       [self.view addSubview:_mapView];
     [self CreateSearchView];
     [self CreateLandView];
 }
--(void)mapView:(GMSMapView *)mapView willMove:(BOOL)gesture{
-    [self.searchView.SearchTF endEditing:YES];
-}
+//-(void)mapView:(GMSMapView *)mapView willMove:(BOOL)gesture{
+//    [self.searchView.SearchTF endEditing:YES];
+//}
 #pragma mark---------searchTF
 -(void)CreateSearchView{
-    self.searchView=[[[NSBundle mainBundle]loadNibNamed:@"SearchView" owner:self options:nil]lastObject];
+
+    self.searchView=(SearchView*)[[ToolManager shareManager] creatAllreadAlterView:@"SearchView"];
     [self.view addSubview:self.searchView];
     self.searchView.frame=CGRectMake(8,56, SCREEN_WIDTH-16, 48);
     
@@ -59,7 +60,7 @@
     self.MyLocationBtn.layer.masksToBounds=YES;
     self.MyLocationBtn.backgroundColor=[UIColor whiteColor];
    
-    [self.MyLocationBtn setImage:[UIImage imageNamed:@"MyLocation"] forState:UIControlStateNormal];
+    [self.MyLocationBtn setImage:[[ToolManager shareManager] creatZhujianImgView:@"MyLocation"] forState:UIControlStateNormal];
     [self.MyLocationBtn addTarget:self action:@selector(ShowMyCurrentLocation) forControlEvents:UIControlEventTouchUpInside];
 
   
@@ -74,8 +75,8 @@
         lat=[DEF_PERSISTENT_GET_OBJECT(@"userLat") doubleValue];
         lng=[DEF_PERSISTENT_GET_OBJECT(@"userLng") doubleValue];
     }
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:lat longitude:lng zoom:12];
-    self.mapView.camera=camera;
+   // GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:lat longitude:lng zoom:12];
+   // self.mapView.camera=camera;
 
 }
 -(void)PopController{
@@ -83,8 +84,8 @@
 }
 #pragma mark---------landView
 -(void)CreateLandView{
-    
-    self.landView=[[[NSBundle mainBundle]loadNibNamed:@"SDMLandingView" owner:self options:nil]lastObject];
+
+    self.landView=(SDMLandingView*)[[ToolManager shareManager] creatAllreadAlterView:@"SDMLandingView"];
     [self.view addSubview:self.landView];
     self.landView.frame=CGRectMake(0,Y1+5, SCREEN_WIDTH,29);
   
@@ -115,7 +116,8 @@ return _detailView;
 -(TempOneView *)oneView
 {
 if (!_oneView) {
-    _oneView=[[[NSBundle mainBundle]loadNibNamed:@"TempOneView" owner:self options:nil]lastObject];
+
+    _oneView=(TempOneView*)[[ToolManager shareManager] creatAllreadAlterView:@"TempOneView"];
     _oneView.PhotosView.isScrollStoped=1;
     _oneView.frame=CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-40);
    
@@ -183,12 +185,12 @@ return _shadowView;
     
     CLLocationCoordinate2D center = CLLocationCoordinate2DMake((minCoordinate.latitude + maxCoordinate.latitude) / 2.0, (minCoordinate.longitude + maxCoordinate.longitude) / 2.0);
          
-    GMSCameraPosition*camera =[[GMSCameraPosition alloc]initWithLatitude:center.latitude longitude:center.longitude zoom:12 bearing:0 viewingAngle:0];
-    self.mapView.camera=camera;
-GMSCoordinateBounds *pointBounds = [[GMSCoordinateBounds alloc] initWithCoordinate:maxCoordinate     coordinate:minCoordinate];
-    GMSCameraUpdate *googleUpdate=[GMSCameraUpdate fitBounds:pointBounds withPadding:0];
+ //   GMSCameraPosition*camera =[[GMSCameraPosition alloc]initWithLatitude:center.latitude longitude:center.longitude zoom:12 bearing:0 viewingAngle:0];
+   // self.mapView.camera=camera;
+//GMSCoordinateBounds *pointBounds = [[GMSCoordinateBounds alloc] initWithCoordinate:maxCoordinate     coordinate:minCoordinate];
+ //   GMSCameraUpdate *googleUpdate=[GMSCameraUpdate fitBounds:pointBounds withPadding:0];
 
-    [self.mapView animateWithCameraUpdate:googleUpdate];
+    //[self.mapView animateWithCameraUpdate:googleUpdate];
 }
 #pragma mark-----------导航
 -(void)doNavigationWithEndLocation:(NSArray *)endLocation

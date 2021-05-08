@@ -21,7 +21,7 @@
 */
 -(void)awakeFromNib{
     [super awakeFromNib];
-    [self.MapHistoryTabV registerNib:[UINib nibWithNibName:@"SearchResultCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"SearchResultCell"];
+    [self.MapHistoryTabV registerNib:[UINib nibWithNibName:@"SearchResultCell" bundle:[[ToolManager shareManager] subBundleWithBundleName]] forCellReuseIdentifier:@"SearchResultCell"];
     self.MapHistoryTabV.delegate=self;
     self.MapHistoryTabV.dataSource=self;
     self.MapHistoryTabV.separatorStyle=UITableViewCellSeparatorStyleNone;

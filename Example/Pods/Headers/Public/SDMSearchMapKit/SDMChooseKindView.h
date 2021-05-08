@@ -1,0 +1,1 @@
+../../../../../SDMSearchMapKit/Classes/View/SDMChooseKindView.h

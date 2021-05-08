@@ -63,6 +63,8 @@ typedef NS_ENUM(NSInteger, requestStyle){
 -(void)GotoLogin;
 //清除缓存
 - (void)cleanCacheAndCookie;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

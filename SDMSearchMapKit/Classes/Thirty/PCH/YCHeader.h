@@ -20,11 +20,11 @@
 // 获取Caches目录路径
 #define DEF_CachesDir           [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0]
 // 获取当前程序包中一个图片资源（apple.png）路径
-#define DEF_IMAGE_PATH(_name)   [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:_name]
+#define DEF_IMAGE_PATH(_name)   [[[[ToolManager shareManager] subBundleWithBundleName] bundlePath] stringByAppendingPathComponent:_name]
 //获取本地图片
 #define DEF_IMAGE(_name)  [UIImage imageWithContentsOfFile:DEF_IMAGE_PATH(_name)]
 
-#define NSEaseLocalizedString(key, comment) [[NSBundle bundleWithURL:[[NSBundle mainBundle] URLForResource:@"EaseUIResource" withExtension:@"bundle"]] localizedStringForKey:(key) value:@"" table:nil]
+#define NSEaseLocalizedString(key, comment) [[NSBundle bundleWithURL:[[[ToolManager shareManager] subBundleWithBundleName] URLForResource:@"EaseUIResource" withExtension:@"bundle"]] localizedStringForKey:(key) value:@"" table:nil]
 
 
 //googleKey
@@ -140,7 +140,7 @@ NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];               
 /**
  *  清除 NSUserDefaults 保存的所有数据
  */
-#define DEF_PERSISTENT_REMOVE_ALLDATA   [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:[[NSBundle mainBundle] bundleIdentifier]]
+#define DEF_PERSISTENT_REMOVE_ALLDATA   [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:[[[ToolManager shareManager] subBundleWithBundleName] bundleIdentifier]]
 
 
 /**
@@ -156,7 +156,7 @@ NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];       \
 #define DBCachesTabel @"user_Cachestable"
 //缓存名字
 #define NetworkCache @"NetworkCache"
-#define NSEaseLocalizedString(key, comment) [[NSBundle bundleWithURL:[[NSBundle mainBundle] URLForResource:@"EaseUIResource" withExtension:@"bundle"]] localizedStringForKey:(key) value:@"" table:nil]
+#define NSEaseLocalizedString(key, comment) [[NSBundle bundleWithURL:[[[ToolManager shareManager] subBundleWithBundleName] URLForResource:@"EaseUIResource" withExtension:@"bundle"]] localizedStringForKey:(key) value:@"" table:nil]
 
 //微信
 

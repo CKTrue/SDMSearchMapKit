@@ -32,11 +32,11 @@
     [self.searchView.ShowMapViewControllerBtn addTarget:self action:@selector(clickBtn) forControlEvents:UIControlEventTouchUpInside];
     self.landView.deleagte=self;
     [self.view addSubview:self.LandgingScreenView];
-    self.chooseKindView=[[[NSBundle mainBundle]loadNibNamed:@"SDMChooseKindView" owner:self options:nil]lastObject];
-    self.chooseKindView.frame=CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-Y5);
+    self.chooseKindView=(SDMChooseKindView*)[[ToolManager shareManager] creatAllreadAlterView:@"SDMChooseKindView"];
+    self.chooseKindView.frame=CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     [self.LandgingScreenView addSubview:self.chooseKindView];
+    self.chooseKindView.backgroundColor=[UIColor whiteColor];
     //self.chooseKindView.ScrollView.scrollEnabled=NO;
-    
     UIPanGestureRecognizer*pan1= [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pandetail:)];
         pan1.delegate = self;
     [self.chooseKindView addGestureRecognizer:pan1];

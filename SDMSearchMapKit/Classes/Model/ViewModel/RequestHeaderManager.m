@@ -17,10 +17,12 @@
     });
     return defaultHeadManager;
 }
--(void)setRequestUrl:(NSString *)requestUrl{
+-(void)SetRequestUrl:(NSString *)requestUrl AccessToken:(NSString*)token{
     NSUserDefaults* userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.net.openid.appauth.Example"];
-    [userDefaults setValue:requestUrl forKey:@"requestUrl"];
-    self.requestUrl=requestUrl;
+    [userDefaults setValue:requestUrl forKey:@"RequestUrl"];
+    [userDefaults setValue:token forKey:kAppAuthExampleAuthStateKey];
+
+
 }
 -(NSDictionary*)defaultheader{
     

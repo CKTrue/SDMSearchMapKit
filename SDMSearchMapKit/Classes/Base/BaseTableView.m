@@ -96,7 +96,7 @@
     self.DescLabel.textAlignment=NSTextAlignmentCenter;
     self.DescLabel.textColor=[UIColor colorWithRed:88/255.0 green:89/255.0 blue:91/255.0 alpha:1];
     
-    [self.SearchImgV setImage:[UIImage imageNamed:@"BigSearch"]];
+    [self.SearchImgV setImage:[[ToolManager shareManager] creatZhujianImgView:@"BigSearch"]];
     [self addSubview:_TabcontenView];
     }
     return _TabcontenView;

@@ -44,7 +44,7 @@
         _SearchTabV.frame=CGRectMake(0,0, SCREEN_WIDTH, SCREEN_HEIGHT-104-TabBarHeight);
         [self.view addSubview:_SearchTabV];
         _SearchTabV.separatorColor=[UIColor clearColor];
-        [_SearchTabV registerNib:[UINib nibWithNibName:@"SearchResultCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"SearchResultCell"];
+        [_SearchTabV registerNib:[UINib nibWithNibName:@"SearchResultCell" bundle:[[ToolManager shareManager] subBundleWithBundleName]] forCellReuseIdentifier:@"SearchResultCell"];
         _SearchTabV.scrollEnabled=NO;
         _SearchTabV.userInteractionEnabled=YES;
         _SearchTabV.separatorStyle=UITableViewCellSeparatorStyleNone;
@@ -229,7 +229,7 @@
 
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     if(section==0){
-    self.TopView=[[[NSBundle mainBundle]loadNibNamed:@"SearchTopView" owner:self options:nil]lastObject];
+        self.TopView=(SearchTopView*)[[ToolManager shareManager] creatAllreadAlterView:@"SearchTopView"];
     self.TopView.backgroundColor=[UIColor whiteColor];
     self.TopView.frame=CGRectMake(0, 0, SCREEN_WIDTH, 118);
     return self.TopView;

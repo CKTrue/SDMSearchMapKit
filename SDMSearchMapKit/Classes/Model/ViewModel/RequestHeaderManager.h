@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (RequestHeaderManager *_Nullable)defaultManager;
 
 -(NSDictionary*)defaultheader;
-@property(nonatomic,copy)NSString*requestUrl;
+-(void)SetRequestUrl:(NSString *)requestUrl AccessToken:(NSString*)token;
 @end
 
 NS_ASSUME_NONNULL_END

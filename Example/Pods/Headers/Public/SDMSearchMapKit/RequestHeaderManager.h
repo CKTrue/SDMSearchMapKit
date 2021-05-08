@@ -1,0 +1,1 @@
+../../../../../SDMSearchMapKit/Classes/Model/ViewModel/RequestHeaderManager.h

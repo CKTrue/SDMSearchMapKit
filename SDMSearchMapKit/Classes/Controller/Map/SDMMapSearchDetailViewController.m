@@ -32,18 +32,19 @@
     if (self.SearchTFHidden==YES) {
         self.searchView.hidden=YES;
     }
-    [self.searchView.backBtn setImage:[UIImage imageNamed:@"left_arrow"] forState:UIControlStateNormal];
-    
+    [self.searchView.backBtn setImage:[[ToolManager shareManager] creatZhujianImgView:@"left_arrow"] forState:UIControlStateNormal];
+
     [self.searchView.checkPasswordBtn addTarget:self action:@selector(clearSearchTF) forControlEvents:UIControlEventTouchUpInside];
     
     
     self.searchView.SearchTF.text=self.SearchStr;
     
     if (self.searchView.SearchTF.text.length==0){
-        [self.searchView.checkPasswordBtn setImage:[UIImage imageNamed:@"mic"] forState:UIControlStateNormal];
+        [self.searchView.checkPasswordBtn setImage:[[ToolManager shareManager] creatZhujianImgView:@"mic"] forState:UIControlStateNormal];
+
         
     }else{
-        [self.searchView.checkPasswordBtn setImage:[UIImage imageNamed:@"close"] forState:UIControlStateNormal];
+        [self.searchView.checkPasswordBtn setImage:[[ToolManager shareManager] creatZhujianImgView:@"close"] forState:UIControlStateNormal];
     }
     
     self.landView.hidden=YES;
@@ -112,7 +113,7 @@
     
 }
 -(void)clearSearchTF{
-    if ([self.searchView.checkPasswordBtn.currentImage isEqual:[UIImage imageNamed:@"close"]]) {
+    if ([self.searchView.checkPasswordBtn.currentImage isEqual:[[ToolManager shareManager] creatZhujianImgView:@"close"]]) {
         [USER_DEFAULT setBool:YES forKey:@"clearSearchTF"];
         [self.detailView removeFromSuperview];
         
@@ -161,23 +162,23 @@
         [self.view addSubview:self.detailView];
         self.oneView.distanceLabel.text=[[ToolManager shareManager] setDistanceStr:Distance];
         
-        [self.marker.map clear];
-        self.marker.map=nil;
+       // [self.marker.map clear];
+       // self.marker.map=nil;
         
         if([model.local_provider_enum intValue]==2||[model.local_provider_enum intValue]==6){
             
-            self.marker = [GMSMarker markerWithPosition:coor1];
-            self.marker.map = self.mapView;
+            //self.marker = [GMSMarker markerWithPosition:coor1];
+            //self.marker.map = self.mapView;
             
-            GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:[model.latitude doubleValue] longitude:[model.longitude doubleValue] zoom:12];
+          //  GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:[model.latitude doubleValue] longitude:[model.longitude doubleValue] zoom:12];
             
-            self.mapView.camera=camera;
+           // self.mapView.camera=camera;
             if([model.local_provider_enum intValue]==2){
                 
-                weakSelf.marker.icon=[UIImage imageNamed:@"markericon"];
+               // weakSelf.marker.icon=[UIImage imageNamed:@"markericon"];
                 
             }else{
-                weakSelf.marker.icon=[UIImage imageNamed:@"graymarkericon"];
+               // weakSelf.marker.icon=[UIImage imageNamed:@"graymarkericon"];
                 
             }
             
@@ -211,7 +212,7 @@
         
         [[SearchResultViewModel defaultModel] requestDeleteFavorite:oneView.model.custom_id succeed:^(id  _Nonnull data) {
             
-            [weakSelf.oneView.FavoritesBtn setImage:[UIImage imageNamed:@"nofavirate"] forState:UIControlStateNormal];
+            [weakSelf.oneView.FavoritesBtn setImage:[[ToolManager shareManager] creatZhujianImgView:@"nofavorite"] forState:UIControlStateNormal];
             weakSelf.oneView.model.is_favorite=@"0";
             NSMutableArray*array=[[ToolManager shareManager] getDataWithUserDefalutKey:FavoriteData];
             [array enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -243,7 +244,7 @@
         }
         [[SearchResultViewModel defaultModel] requestAddFavorite:oneView.model.custom_id Lat:oneView.model.latitude Lng:oneView.model.longitude local_provider_num:provider name:name succeed:^(id _Nonnull data) {
             
-            [weakSelf.oneView.FavoritesBtn setImage:[UIImage imageNamed:@"favirate"] forState:UIControlStateNormal];
+            [weakSelf.oneView.FavoritesBtn setImage:[[ToolManager shareManager] creatZhujianImgView:@"favorite"] forState:UIControlStateNormal];
             weakSelf.oneView.model.is_favorite=@"1";
             
             NSMutableArray*array=[[ToolManager shareManager] getDataWithUserDefalutKey:FavoriteData];
@@ -277,7 +278,7 @@
     else{
         shareTitle=model.title;
     }
-    UIImage *shareImage =[UIImage imageNamed:@"markericon"];
+    UIImage *shareImage =[[ToolManager shareManager] creatZhujianImgView:@"markericon"];
     NSString*string=[NSString stringWithFormat:@"https://appdl.stationdm.com/toyotapoisearch/?SearchDetail=%@=%@",model.custom_id,model.local_provider_enum];
 
     NSURL*shareUrl=[NSURL URLWithString:string];

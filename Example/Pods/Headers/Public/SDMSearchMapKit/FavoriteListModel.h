@@ -1,0 +1,1 @@
+../../../../../SDMSearchMapKit/Classes/Model/FavoriteListModel.h

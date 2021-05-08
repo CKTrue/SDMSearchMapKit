@@ -28,14 +28,19 @@
     NSArray*scorearray=@[@"4.6",@"4.8",@"4.5"];
 
     for (int i=0; i<DataArray.count; i++) {
-        BrunckpickKindView*ContentView=[[[NSBundle mainBundle]loadNibNamed:@"BrunckpickKindView" owner:self options:nil]lastObject];
+        BrunckpickKindView*ContentView=(BrunckpickKindView*)[[ToolManager shareManager] creatAllreadAlterView:@"BrunckpickKindView"];
         ContentView.frame=CGRectMake(160*i+16,0,144,210);
         [self.BgscrollV addSubview:ContentView];
-       
-        [ContentView.ImgView setImage:[UIImage imageNamed:DataArray[i]]];
+        NSBundle *mainBundle = [NSBundle bundleForClass:[self class]];
+           NSBundle *resourcesBundle = [NSBundle bundleWithPath:[mainBundle pathForResource:@"SDMSearchMapKit" ofType:@"bundle"]];
+
+        
+        [ContentView.ImgView setImage:[UIImage imageNamed:DataArray[i] inBundle: resourcesBundle compatibleWithTraitCollection:nil]];
+
+      //  [ContentView.ImgView setImage:[[ToolManager shareManager] creatZhujianImgView:DataArray[i]]];
         ContentView.NameLabel.text=array[i];
         
-        [ContentView.StarImgV setImage:[UIImage imageNamed:@"star"]];
+        [ContentView.StarImgV setImage:[[ToolManager shareManager] creatZhujianImgView:@"star"]];
         ContentView.ScoreLabel.text=scorearray[i];
         
 

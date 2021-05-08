@@ -38,11 +38,10 @@
 
 -(void)setModel:(SearchResultModel *)model{
     _model=model;
-    
     if ([model.is_favorite isEqualToString:@"1"]) {
-        [self.FavoritesBtn setImage:[UIImage imageNamed:@"favirate"] forState:UIControlStateNormal];
+        [self.FavoritesBtn setImage:[[ToolManager shareManager] creatZhujianImgView:@"favorite"] forState:UIControlStateNormal];
     }else{
-        [self.FavoritesBtn setImage:[UIImage imageNamed:@"nofavirate"] forState:UIControlStateNormal];
+        [self.FavoritesBtn setImage:[[ToolManager shareManager] creatZhujianImgView:@"nofavorite"] forState:UIControlStateNormal];
 
     }
     
@@ -130,7 +129,7 @@
 
 if([_model.local_provider_enum intValue]==6){
     self.SearchKindLabel.text=_model.name;
-    [self.CarTypeImgV setImage:[UIImage imageNamed:@"place"]];
+    [self.CarTypeImgV setImage:[[ToolManager shareManager] creatZhujianImgView:@"place"]];
     if(_model.address){
         self.AddressLabel.text=_model.address;
         

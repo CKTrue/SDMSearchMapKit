@@ -7,7 +7,6 @@
 //
 
 @import UIKit;
-
 @interface SDMAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

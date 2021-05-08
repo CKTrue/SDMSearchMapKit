@@ -32,7 +32,8 @@
     model.body=dic;
     model.httpMethod=NetworkRequestTypeGET;
     model.header=[[RequestHeaderManager defaultManager] defaultheader];
-    model.path=[NSString stringWithFormat:@"%@suggest",baseURL2];
+   
+    model.path=[NSString stringWithFormat:@"suggest"];
      [weakSelf requestData:model succeed:^(id  _Nonnull data) {
             if (succeed) {
                 succeed(data);
@@ -67,7 +68,8 @@
     model.httpMethod=NetworkRequestTypeGET;
 
     model.header=[[RequestHeaderManager defaultManager] defaultheader];
-    model.path=[NSString stringWithFormat:@"%@search",baseURL2];
+  
+    model.path=[NSString stringWithFormat:@"search"];
      [weakSelf requestData:model succeed:^(id  _Nonnull data) {
             if (succeed) {
                 succeed(data);
@@ -84,7 +86,7 @@
     APIModel*model=[[APIModel alloc]init];
     model.httpMethod=NetworkRequestTypeGET;
     model.header=[[RequestHeaderManager defaultManager] defaultheader];
-    model.path=[NSString stringWithFormat:@"%@search/detail/%@/%@",baseURL2,customId,local_provider_num];
+    model.path=[NSString stringWithFormat:@"search/detail/%@/%@",customId,local_provider_num];
      [weakSelf requestData:model succeed:^(id  _Nonnull data) {
             if (succeed) {
                 succeed(data);
@@ -101,7 +103,8 @@
     APIModel*model=[[APIModel alloc]init];
     model.httpMethod=NetworkRequestTypeGET;
     model.header=[[RequestHeaderManager defaultManager] defaultheader];
-    model.path=[NSString stringWithFormat:@"%@",baseURL1(@"favorites")];
+
+    model.path=[NSString stringWithFormat:@"favorites"];
 
      [weakSelf requestData:model succeed:^(id  _Nonnull data) {
             if (succeed) {
@@ -119,7 +122,7 @@
     APIModel*model=[[APIModel alloc]init];
     model.httpMethod=NetworkRequestTypeDELETE;
     model.header=[[RequestHeaderManager defaultManager] defaultheader];
-    model.path=[NSString stringWithFormat:@"%@/%@",baseURL1(@"favorites"),ID];
+    model.path=[NSString stringWithFormat:@"favorites/%@",ID];
 
      [weakSelf requestData:model succeed:^(id  _Nonnull data) {
             if (succeed) {
@@ -137,7 +140,7 @@
     model.body=params;
     model.httpMethod=NetworkRequestTypeDELETE;
     model.header=[[RequestHeaderManager defaultManager] defaultheader];
-    model.path=[NSString stringWithFormat:@"%@",baseURL1(@"favorites")];
+    model.path=[NSString stringWithFormat:@"favorites"];
 
      [weakSelf requestData:model succeed:^(id  _Nonnull data) {
             if (succeed) {
@@ -172,7 +175,7 @@
     model.httpMethod=NetworkRequestTypePOST;
 
     model.header=[[RequestHeaderManager defaultManager] defaultheader];
-    model.path=[NSString stringWithFormat:@"%@",baseURL1(@"favorites")];
+    model.path=[NSString stringWithFormat:@"favorites"];
 
     [weakSelf requestData:model succeed:^(id  _Nonnull data) {
             if (succeed) {
@@ -193,7 +196,7 @@
 
     model.header=[[RequestHeaderManager defaultManager] defaultheader];
     
-    model.path=[NSString stringWithFormat:@"%@/%@",baseURL1(@"favorites"),ID];
+    model.path=[NSString stringWithFormat:@"favorites/%@",ID];
 
     [weakSelf requestData:model succeed:^(id  _Nonnull data) {
             if (succeed) {
@@ -212,7 +215,8 @@
     model.body=params;
     model.httpMethod=NetworkRequestTypePUT;
     model.header=[[RequestHeaderManager defaultManager] defaultheader];
-    model.path=[NSString stringWithFormat:@"%@",baseURL1(@"favorites/orders")];
+
+    model.path=[NSString stringWithFormat:@"favorites/orders"];
 
      [weakSelf requestData:model succeed:^(id  _Nonnull data) {
             if (succeed) {
@@ -235,7 +239,8 @@
     model.httpMethod=NetworkRequestTypeGET;
 
     model.header=[[RequestHeaderManager defaultManager] defaultheader];
-    model.path=[NSString stringWithFormat:@"%@",baseURL1(@"histories")];
+
+    model.path=[NSString stringWithFormat:@"histories"];
 
     [weakSelf requestData:model succeed:^(id  _Nonnull data) {
             if (succeed) {
@@ -253,7 +258,8 @@
     APIModel*model=[[APIModel alloc]init];
     model.httpMethod=NetworkRequestTypeDELETE;
     model.header=[[RequestHeaderManager defaultManager] defaultheader];
-    model.path=[NSString stringWithFormat:@"%@/%@",baseURL1(@"histories"),ID];
+
+    model.path=[NSString stringWithFormat:@"histories/%@",ID];
 
     [weakSelf requestData:model succeed:^(id  _Nonnull data) {
            if (succeed) {
@@ -270,7 +276,8 @@
     APIModel*model=[[APIModel alloc]init];
     model.httpMethod=NetworkRequestTypeDELETE;
     model.header=[[RequestHeaderManager defaultManager] defaultheader];
-    model.path=[NSString stringWithFormat:@"%@",baseURL1(@"histories")];
+
+    model.path=[NSString stringWithFormat:@"histories"];
 
     [weakSelf requestData:model succeed:^(id  _Nonnull data) {
             if (succeed) {

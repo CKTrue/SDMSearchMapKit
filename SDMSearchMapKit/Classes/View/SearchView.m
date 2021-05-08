@@ -28,7 +28,8 @@
    
     self.backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     self.backBtn.frame = CGRectMake(0, 0, 48, 48);
-    [self.backBtn setImage:[UIImage imageNamed:@"search"] forState:UIControlStateNormal];
+    
+    [self.backBtn setImage:[[ToolManager shareManager] creatZhujianImgView:@"search"] forState:UIControlStateNormal];
       self.backBtn.contentMode = UIViewContentModeCenter;
     UIView*leftV=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 48, 48)];
     [leftV addSubview:self.backBtn];
@@ -41,7 +42,7 @@
     
     self.checkPasswordBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     self.checkPasswordBtn.frame = CGRectMake(0, 0, 48, 48);
-    [self.checkPasswordBtn setImage:[UIImage imageNamed:@"mic"] forState:UIControlStateNormal];
+    [self.checkPasswordBtn setImage:[[ToolManager shareManager] creatZhujianImgView:@"mic"] forState:UIControlStateNormal];
       self.checkPasswordBtn.contentMode = UIViewContentModeCenter;
     UIView*rightV=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 48, 48)];
     [rightV addSubview:self.checkPasswordBtn];

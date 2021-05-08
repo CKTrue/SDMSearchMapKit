@@ -36,7 +36,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.titleLabel.text=@"Favorites";
-    [self.MyFavoriteTableV registerNib:[UINib nibWithNibName:@"FavoriteListCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"FavoriteListCell"];
+    [self.MyFavoriteTableV registerNib:[UINib nibWithNibName:@"FavoriteListCell" bundle:[[ToolManager shareManager] subBundleWithBundleName]] forCellReuseIdentifier:@"FavoriteListCell"];
     self.MyFavoriteTableV.delegate=self;
     self.MyFavoriteTableV.dataSource=self;
     self.MyFavoriteTableV.separatorStyle=UITableViewCellSeparatorStyleNone;
@@ -158,12 +158,12 @@
         cell.contentView.userInteractionEnabled=YES;
         cell.SelectImgWidth.constant=24;
         cell.SelectImgView.hidden=NO;
-        [cell.MoveBtn setImage:[UIImage imageNamed:@"move"] forState:UIControlStateNormal];
+        [cell.MoveBtn setImage:[[ToolManager shareManager] creatZhujianImgView:@"move"] forState:UIControlStateNormal];
         if (model.delfavorite==YES) {
-            [cell.SelectImgView setImage:[UIImage imageNamed:@"check_box"]];
+            [cell.SelectImgView setImage:[[ToolManager shareManager] creatZhujianImgView:@"check_box"]];
             
         }else{
-            [cell.SelectImgView setImage:[UIImage imageNamed:@"check_box_outline"]];
+            [cell.SelectImgView setImage:[[ToolManager shareManager] creatZhujianImgView:@"check_box_outline"]];
             
         }
         
@@ -171,8 +171,8 @@
         cell.contentView.userInteractionEnabled=NO;
         cell.SelectImgWidth.constant=0;
         cell.SelectImgView.hidden=YES;
-        [cell.SelectImgView setImage:[UIImage imageNamed:@"check_box_outline"]];
-        [cell.MoveBtn setImage:[UIImage imageNamed:@"right_arrow"] forState:UIControlStateNormal];
+        [cell.SelectImgView setImage:[[ToolManager shareManager] creatZhujianImgView:@"check_box_outline"]];
+        [cell.MoveBtn setImage:[[ToolManager shareManager] creatZhujianImgView:@"right_arrow"] forState:UIControlStateNormal];
         
     }
     return cell;
@@ -291,8 +291,8 @@
         [weakSelf presentViewController:CancelAlertViewController animated:YES completion:nil];
         
     }];
-    EditAction.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"edit_slider"]];
-    DeleteAction.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"delete_slider"]];
+    EditAction.backgroundColor=[UIColor colorWithPatternImage:[[ToolManager shareManager] creatZhujianImgView:@"edit_slider"]];
+    DeleteAction.backgroundColor=[UIColor colorWithPatternImage:[[ToolManager shareManager] creatZhujianImgView:@"delete_slider"]];
     
     return @[DeleteAction,EditAction];
     

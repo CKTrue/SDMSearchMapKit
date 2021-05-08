@@ -62,14 +62,14 @@
    
     
    
-    GMSCameraPosition*camera =[[GMSCameraPosition alloc]initWithLatitude:[self.dic[@"lat"] doubleValue] longitude:[self.dic[@"lng"] doubleValue] zoom:15];
-    self.mapView.camera=camera;
+   // GMSCameraPosition*camera =[[GMSCameraPosition alloc]initWithLatitude:[self.dic[@"lat"] doubleValue] longitude:[self.dic[@"lng"] doubleValue] zoom:15];
+   // self.mapView.camera=camera;
 
   
 }
 -(SDMMyCarLocationView*)locationView{
     if (!_locationView) {
-        _locationView=[[[NSBundle mainBundle]loadNibNamed:@"SDMMyCarLocationView" owner:self options:nil]lastObject];
+        _locationView=(SDMMyCarLocationView*)[[ToolManager shareManager] creatAllreadAlterView:@"SDMMyCarLocationView"];
         [self.view addSubview:self.shadowView];
         DSLog(@"%f",[UIScreen mainScreen].bounds.size.height/2);
         self.shadowView.frame=CGRectMake(0,self.view.frame.size.height-400, SCREEN_WIDTH, SCREEN_HEIGHT);
@@ -82,19 +82,19 @@
 #pragma mark---------locationView
 -(void)createlocationView:(NSMutableDictionary*) dic{
 
-    [self.marker.map clear];
-    self.marker.map=nil;
+   // [self.marker.map clear];
+    //self.marker.map=nil;
    
     self.MyLocationBtn.frame=CGRectMake(SCREEN_WIDTH-66,self.shadowView.frame.origin.y-60, 56, 56);
     CLLocationCoordinate2D coor=CLLocationCoordinate2DMake([dic[@"lat"] doubleValue], [dic[@"lng"] doubleValue]);
 
     CLLocationCoordinate2D coor2=CLLocationCoordinate2DMake([DEF_PERSISTENT_GET_OBJECT(@"userLat") doubleValue], [DEF_PERSISTENT_GET_OBJECT(@"userLng") doubleValue]);
  
-    self.marker = [GMSMarker markerWithPosition:coor];
-    self.marker.groundAnchor=CGPointMake(0.5, 0.5);
-    self.marker.map = self.mapView;
+   // self.marker = [GMSMarker markerWithPosition:coor];
+   // self.marker.groundAnchor=CGPointMake(0.5, 0.5);
+   // self.marker.map = self.mapView;
   
-    self.marker.icon=[UIImage imageNamed:@"markerCarIcon"];
+   // self.marker.icon=[UIImage imageNamed:@"markerCarIcon"];
 
     
     double Distance=[[ToolManager shareManager] getDistanceMetresBetweenLocationCoordinatesLocation1:coor Location2:coor2];
@@ -115,28 +115,28 @@
 
     }
     kWeakSelf;
-    [[GMSGeocoder geocoder] reverseGeocodeCoordinate:coor completionHandler:^(GMSReverseGeocodeResponse * response, NSError * error) {
-
-        GMSAddress* addressObj=[response results].firstObject;
-        NSString*str=@"";
-        if (addressObj.thoroughfare) {
-           str= [str stringByAppendingString:[NSString stringWithFormat:@"%@",addressObj.thoroughfare]];
-        }
-        if (addressObj.subLocality) {
-           str= [str stringByAppendingString:[NSString stringWithFormat:@",%@",addressObj.subLocality]];
-        }
-        if (addressObj.locality) {
-           str= [str stringByAppendingString:[NSString stringWithFormat:@",%@",addressObj.locality]];
-        }
-        if (addressObj.administrativeArea) {
-           str= [str stringByAppendingString:[NSString stringWithFormat:@",%@",addressObj.administrativeArea]];
-        }
-        if (addressObj.country) {
-           str= [str stringByAppendingString:[NSString stringWithFormat:@",%@",addressObj.country]];
-        }
-        weakSelf.locationView.LocationLabel.text=str;
-
-    }];
+//    [[GMSGeocoder geocoder] reverseGeocodeCoordinate:coor completionHandler:^(GMSReverseGeocodeResponse * response, NSError * error) {
+//
+//        GMSAddress* addressObj=[response results].firstObject;
+//        NSString*str=@"";
+//        if (addressObj.thoroughfare) {
+//           str= [str stringByAppendingString:[NSString stringWithFormat:@"%@",addressObj.thoroughfare]];
+//        }
+//        if (addressObj.subLocality) {
+//           str= [str stringByAppendingString:[NSString stringWithFormat:@",%@",addressObj.subLocality]];
+//        }
+//        if (addressObj.locality) {
+//           str= [str stringByAppendingString:[NSString stringWithFormat:@",%@",addressObj.locality]];
+//        }
+//        if (addressObj.administrativeArea) {
+//           str= [str stringByAppendingString:[NSString stringWithFormat:@",%@",addressObj.administrativeArea]];
+//        }
+//        if (addressObj.country) {
+//           str= [str stringByAppendingString:[NSString stringWithFormat:@",%@",addressObj.country]];
+//        }
+//        weakSelf.locationView.LocationLabel.text=str;
+//
+//    }];
     
                     
 

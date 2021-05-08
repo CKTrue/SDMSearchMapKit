@@ -42,13 +42,14 @@
    
    [self.searchView.ShowMapViewControllerBtn addTarget:self action:@selector(clickBtn) forControlEvents:UIControlEventTouchUpInside];
 
-    [self.searchView.backBtn setImage:[UIImage imageNamed:@"left_arrow"] forState:UIControlStateNormal];
+    [self.searchView.backBtn setImage:[[ToolManager shareManager] creatZhujianImgView:@"left_arrow"] forState:UIControlStateNormal];
 
     if (self.searchView.SearchTF.text.length==0){
-        [self.searchView.checkPasswordBtn setImage:[UIImage imageNamed:@"mic"] forState:UIControlStateNormal];
+        [self.searchView.checkPasswordBtn setImage:[[ToolManager shareManager] creatZhujianImgView:@"mic"] forState:UIControlStateNormal];
 
     }else{
-     [self.searchView.checkPasswordBtn setImage:[UIImage imageNamed:@"close"] forState:UIControlStateNormal];
+        [self.searchView.checkPasswordBtn setImage:[[ToolManager shareManager] creatZhujianImgView:@"close"] forState:UIControlStateNormal];
+
       }
     [self.searchView.checkPasswordBtn addTarget:self action:@selector(clearSearchTF) forControlEvents:UIControlEventTouchUpInside];
 
@@ -74,7 +75,7 @@
     [self.navigationController popViewControllerAnimated:NO];
 }
 -(void)clearSearchTF{
-    if ([self.searchView.checkPasswordBtn.currentImage isEqual:[UIImage imageNamed:@"close"]]) {
+    if ([self.searchView.checkPasswordBtn.currentImage isEqual:[[ToolManager shareManager] creatZhujianImgView:@"close"]]) {
         [USER_DEFAULT setBool:YES forKey:@"clearSearchTF"];
         [self.navigationController popViewControllerAnimated:NO];
     }
@@ -86,7 +87,7 @@
     if([model.local_provider_enum intValue]==2||[model.local_provider_enum intValue]==6){
 
     
-    [self.resultVC setResultModel:model WithSearchStr:self.searchView.SearchTF.text AndMapScale:self.mapView.camera.zoom];
+    [self.resultVC setResultModel:model WithSearchStr:self.searchView.SearchTF.text AndMapScale:0];
         self.resultVC.block = ^(SearchResultModel * _Nonnull model) {
             [UIView animateWithDuration:0.3 animations:^{
                     weakSelf.shadowView.frame=CGRectMake(0,SCREEN_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT-40);
@@ -102,20 +103,20 @@
         };
         
     self.resultVC.markerBlock = ^(NSMutableArray * _Nonnull Array) {
-         [weakSelf.marker.map clear];
-          weakSelf.marker.map=nil;
+       //  [weakSelf.marker.map clear];
+        //  weakSelf.marker.map=nil;
         
         
         for(SearchResultModel*model in Array){
             CLLocationCoordinate2D coor=CLLocationCoordinate2DMake([model.latitude doubleValue], [model.longitude doubleValue]);
             
-            weakSelf.marker = [GMSMarker markerWithPosition:coor];
-            weakSelf.marker.map = weakSelf.mapView;
+         //   weakSelf.marker = [GMSMarker markerWithPosition:coor];
+          //  weakSelf.marker.map = weakSelf.mapView;
             
             if([model.local_provider_enum intValue]==2){
-                weakSelf.marker.icon=[UIImage imageNamed:@"markericon"];
+            //    weakSelf.marker.icon=[UIImage imageNamed:@"markericon"];
             }else{
-                weakSelf.marker.icon=[UIImage imageNamed:@"graymarkericon"];
+            //    weakSelf.marker.icon=[UIImage imageNamed:@"graymarkericon"];
 
             }
 
@@ -134,9 +135,9 @@
 
     };
     }else{
-        SDMSearchResultListVC*searchlistVC=[[SDMSearchResultListVC alloc]init];
+        SDMSearchResultListVC*searchlistVC=[[SDMSearchResultListVC alloc]initWithNibName:@"SDMSearchResultListVC" bundle:[[ToolManager shareManager] subBundleWithBundleName]];
         searchlistVC.hidesBottomBarWhenPushed=YES;
-        [searchlistVC setResultModel:model WithSearchStr:self.searchView.SearchTF.text AndMapScale:self.mapView.camera.zoom];
+        [searchlistVC setResultModel:model WithSearchStr:self.searchView.SearchTF.text AndMapScale:0];//0:加载地图时等于地图缩放比例
         [self.navigationController pushViewController:searchlistVC animated:NO];
 
 

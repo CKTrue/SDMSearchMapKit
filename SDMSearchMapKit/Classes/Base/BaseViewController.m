@@ -42,7 +42,9 @@
     [view addSubview:self.titleLabel];
     self.navigationItem.titleView=view;
     
-    self.titleLabel.font=[UIFont fontWithName:@"ToyotaTypeW02-Semibold" size:16];
+    NSBundle *currentBundle = [NSBundle bundleForClass:[self class]];
+    NSString *path = [currentBundle pathForResource:@"ToyotaTypeW02-Semibold.ttf" ofType:nil inDirectory:@"SDMSearchMapKit"];
+    self.titleLabel.font=[UIFont fontWithName:path size:16];
     if (DEF_PERSISTENT_GET_OBJECT(@"userLat")==nil) {
         [[ToolManager shareManager] starLocationResult:nil];
     }
@@ -65,33 +67,6 @@
     
    
 }
-
-- (NSMutableArray *)sessionDataTaskMArr {
-if (_sessionDataTaskMArr == nil) {
-    _sessionDataTaskMArr = [NSMutableArray array];
-    
-    }
-    return _sessionDataTaskMArr;
-}
--(void)addSessionDataTask:(NSURLSessionDataTask *)task{
-    if (task==nil) {
-        return;
-    }
-    [self.sessionDataTaskMArr addObject:task];
-}
-
--(void)cancelAllSessionDataTask{
-    if (self.sessionDataTaskMArr.count==0) {
-        return;
-    }
-    for (NSURLSessionDataTask*datatask in self.sessionDataTaskMArr) {
-        if (datatask.state == NSURLSessionTaskStateRunning || datatask.state ==NSURLSessionTaskStateSuspended ) {
-            [datatask cancel];
-    }
-        [self.sessionDataTaskMArr removeAllObjects];
-}
-}
-
 
 -(void)AlertViewShowMsg:(NSString *)msg{
     kWeakSelf;
@@ -443,7 +418,6 @@ if (_sessionDataTaskMArr == nil) {
 }
 -(void)dealloc{
     
-    [self cancelAllSessionDataTask];
     NSLog(@"释放了-------%@", NSStringFromClass([self class]));
 }
 /*

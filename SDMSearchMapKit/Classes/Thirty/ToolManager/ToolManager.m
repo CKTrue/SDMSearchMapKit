@@ -532,7 +532,9 @@ API_AVAILABLE(ios(11.0))
     UILabel *textlabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, width, 0)];
     textlabel.text = text;
     textlabel.numberOfLines=0;
-    textlabel.font = [UIFont fontWithName:@"ToyotaTypeW02-regular" size:fontSize];
+    NSBundle *currentBundle = [NSBundle bundleForClass:[self class]];
+    NSString *path = [currentBundle pathForResource:@"ToyotaTypeW02-regular.ttf" ofType:nil inDirectory:@"SDMSearchMapKit"];
+    textlabel.font = [UIFont fontWithName:path size:fontSize];
     CGSize size = CGSizeMake(width, MAXFLOAT);
     CGSize constraint = [textlabel sizeThatFits:size];
     return constraint.height;
@@ -728,5 +730,31 @@ API_AVAILABLE(ios(11.0))
         }
             break;
     }
+}
+
+
+-(UIView*)creatAllreadAlterView:(NSString*)name{
+   
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    NSString *path = [bundle pathForResource:@"SDMSearchMapKit" ofType:@"bundle"];
+    NSBundle *bundel = [NSBundle bundleWithPath:path];
+    return [[bundel loadNibNamed:name owner:self options:nil] lastObject];
+}
+
+-(NSBundle*)subBundleWithBundleName{
+    //并没有拿到子bundle
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    //在这个路径下找到子bundle的路径
+    NSString *path = [bundle pathForResource:@"SDMSearchMapKit" ofType:@"bundle"];
+    //根据路径拿到子bundle
+    return path?[NSBundle bundleWithPath:path]:[NSBundle mainBundle];
+}
+-(UIImage*)creatZhujianImgView:(NSString*)name{
+    NSInteger scale=[[UIScreen mainScreen] scale];
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    NSString*imagename=[NSString stringWithFormat:@"%@@%ldx.png",name,scale];
+    NSString *path = [bundle pathForResource:imagename ofType:nil inDirectory:@"SDMSearchMapKit.bundle"];
+    
+    return [UIImage imageWithContentsOfFile:path];
 }
 @end

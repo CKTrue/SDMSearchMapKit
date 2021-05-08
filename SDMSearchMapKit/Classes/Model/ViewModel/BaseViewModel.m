@@ -31,8 +31,10 @@
     
     [self ShowHuD];
     
-    
-    
+    NSUserDefaults* userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.net.openid.appauth.Example"];
+
+    NSString*baseurl=[userDefaults objectForKey:@"RequestUrl"];
+    model.path=[NSString stringWithFormat:@"%@/%@",baseurl,model.path];
       [[HttpManager defaultManager] requestType:model.httpMethod url:model.path headers:model.header parameters:model.body isCache:NO cacheTime:0 succeed:^(id data) {
         
         [weakSelf HideHuD];

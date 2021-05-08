@@ -17,31 +17,31 @@
 -(void)setModel:(FavoriteListModel *)model{
     _model=model;
     if([model.provider intValue]==1){
-        [self.HeadTypeImgView setImage:[UIImage imageNamed:@"junction"]];
+        [self.HeadTypeImgView setImage:[[ToolManager shareManager] creatZhujianImgView:@"junction"]];
     }
     if([model.provider intValue]==2){
-        [self.HeadTypeImgView setImage:[UIImage imageNamed:@"toyota"]];
+        [self.HeadTypeImgView setImage:[[ToolManager shareManager] creatZhujianImgView:@"toyota"]];
 
 
     }
     if([model.provider intValue]==3){
-        [self.HeadTypeImgView setImage:[UIImage imageNamed:@"own"]];
+        [self.HeadTypeImgView setImage:[[ToolManager shareManager] creatZhujianImgView:@"own"]];
 
 
     }
     if([model.provider intValue]==4){
-        [self.HeadTypeImgView setImage:[UIImage imageNamed:@"native"]];
+        [self.HeadTypeImgView setImage:[[ToolManager shareManager] creatZhujianImgView:@"native"]];
 
 
     }
     if([model.provider intValue]==5){
-        [self.HeadTypeImgView setImage:[UIImage imageNamed:@"video"]];
+        [self.HeadTypeImgView setImage:[[ToolManager shareManager] creatZhujianImgView:@"video"]];
 
 
     }
     if([model.provider intValue]==6){
         
-        [self.HeadTypeImgView setImage:[UIImage imageNamed:@"gis"]];
+        [self.HeadTypeImgView setImage:[[ToolManager shareManager] creatZhujianImgView:@"gis"]];
 
        
     }

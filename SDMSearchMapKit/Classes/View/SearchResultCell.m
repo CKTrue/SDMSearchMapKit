@@ -19,39 +19,39 @@
     _Model=Model;
     if([_Model.local_provider_enum intValue]==1){
         self.KindTypeLabel.text=@"Junctions";
-        [self.HeadImgV setImage:[UIImage imageNamed:@"junction"]];
+        [self.HeadImgV setImage:[[ToolManager shareManager] creatZhujianImgView:@"junction"]];
 
     }
     if([_Model.local_provider_enum intValue]==2){
         self.KindTypeLabel.text=@"Dealer";
-        [self.HeadImgV setImage:[UIImage imageNamed:@"toyota"]];
-       
+        [self.HeadImgV setImage:[[ToolManager shareManager] creatZhujianImgView:@"toyota"]];
+
     }
     if([_Model.local_provider_enum intValue]==3){
         self.KindTypeLabel.text=@"Owners Manual";
-        [self.HeadImgV setImage:[UIImage imageNamed:@"own"]];
+        [self.HeadImgV setImage:[[ToolManager shareManager] creatZhujianImgView:@"own"]];
 
     }
     if([_Model.local_provider_enum intValue]==4){
         self.KindTypeLabel.text=@"Native";
-        [self.HeadImgV setImage:[UIImage imageNamed:@"native"]];
+        [self.HeadImgV setImage:[[ToolManager shareManager] creatZhujianImgView:@"native"]];
 
     }
     if([_Model.local_provider_enum intValue]==5){
         self.KindTypeLabel.text=@"Video";
-        [self.HeadImgV setImage:[UIImage imageNamed:@"video"]];
+        [self.HeadImgV setImage:[[ToolManager shareManager] creatZhujianImgView:@"video"]];
 
     }
     if([_Model.local_provider_enum intValue]==6){
         self.KindTypeLabel.text=@"Gis";
-        [self.HeadImgV setImage:[UIImage imageNamed:@"gis"]];
+        [self.HeadImgV setImage:[[ToolManager shareManager] creatZhujianImgView:@"gis"]];
 
     }
   
   
     if([_Model.local_provider_enum intValue]==7){
         self.KindTypeLabel.text=@"Events";
-        [self.HeadImgV setImage:[UIImage imageNamed:@"event"]];
+        [self.HeadImgV setImage:[[ToolManager shareManager] creatZhujianImgView:@"event"]];
 
     }
    
@@ -70,8 +70,9 @@
             NSString*string=[NSString stringWithFormat:@"%@\n Low Fule",[[ToolManager shareManager] setDistanceStr:[Model.distance doubleValue]]];
            
             NSMutableAttributedString *AttributedString = [[NSMutableAttributedString alloc] initWithString: string]; //创建一个NSMutableAttributedString
-           
-            [AttributedString addAttribute: NSFontAttributeName value:[UIFont fontWithName:@"ToyotaTypeW02-regular" size:8] range:NSMakeRange(string.length-8,8)];
+            NSBundle *currentBundle = [NSBundle bundleForClass:[self class]];
+            NSString *path = [currentBundle pathForResource:@"ToyotaTypeW02-regular.ttf" ofType:nil inDirectory:@"SDMSearchMapKit"];
+            [AttributedString addAttribute: NSFontAttributeName value:[UIFont fontWithName:path size:8] range:NSMakeRange(string.length-8,8)];
 
             [AttributedString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:235/255.0 green:10/255.0 blue:30/255.0 alpha:1] range:NSMakeRange(0,string.length)];
 
@@ -97,31 +98,32 @@
     _historymodel=historymodel;
     
     if([historymodel.provider intValue]==1){
-        [self.HeadImgV setImage:[UIImage imageNamed:@"junction"]];
+        [self.HeadImgV setImage:[[ToolManager shareManager] creatZhujianImgView:@"junction"]];
+
     }
     if([historymodel.provider intValue]==2){
-        [self.HeadImgV setImage:[UIImage imageNamed:@"toyota"]];
 
+        [self.HeadImgV setImage:[[ToolManager shareManager] creatZhujianImgView:@"toyota"]];
 
     }
     if([historymodel.provider intValue]==3){
-        [self.HeadImgV setImage:[UIImage imageNamed:@"own"]];
+        [self.HeadImgV setImage:[[ToolManager shareManager] creatZhujianImgView:@"own"]];
 
 
     }
     if([historymodel.provider intValue]==4){
-        [self.HeadImgV setImage:[UIImage imageNamed:@"native"]];
+        [self.HeadImgV setImage:[[ToolManager shareManager] creatZhujianImgView:@"native"]];
 
 
     }
     if([historymodel.provider intValue]==5){
-        [self.HeadImgV setImage:[UIImage imageNamed:@"video"]];
 
+        [self.HeadImgV setImage:[[ToolManager shareManager] creatZhujianImgView:@"video"]];
 
     }
     if([historymodel.provider intValue]==6){
         
-        [self.HeadImgV setImage:[UIImage imageNamed:@"gis"]];
+        [self.HeadImgV setImage:[[ToolManager shareManager] creatZhujianImgView:@"gis"]];
 
        
     }

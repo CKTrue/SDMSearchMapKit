@@ -1,0 +1,1 @@
+../../../../../SDMSearchMapKit/Classes/Thirty/SDWebImage/SDImageCacheConfig.h

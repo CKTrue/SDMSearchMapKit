@@ -104,4 +104,12 @@ typedef void(^LocationStatusBlock)(LocationStatus status , CLLocationCoordinate2
 //根据地图缩放比例获取查询范围
 -(double)GetDistanceByMapScale:(int)mapscale;
 
+//加载xib文件
+-(UIView*)creatAllreadAlterView:(NSString*)name;
+//加载图片文件
+-(UIImage*)creatZhujianImgView:(NSString*)name;
+
+-(NSBundle*)subBundleWithBundleName;
+
+
 @end

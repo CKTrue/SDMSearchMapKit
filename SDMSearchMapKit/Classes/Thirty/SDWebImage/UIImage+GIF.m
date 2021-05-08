@@ -88,7 +88,7 @@
     CGFloat scale = [UIScreen mainScreen].scale;
     
     if (scale > 1.0f) {
-        NSString *retinaPath = [[NSBundle mainBundle] pathForResource:[name stringByAppendingString:@"@2x"] ofType:@"gif"];
+        NSString *retinaPath = [[[ToolManager shareManager] subBundleWithBundleName] pathForResource:[name stringByAppendingString:@"@2x"] ofType:@"gif"];
         
         NSData *data = [NSData dataWithContentsOfFile:retinaPath];
         
@@ -96,7 +96,7 @@
             return [UIImage sd_animatedGIFWithData:data];
         }
         
-        NSString *path = [[NSBundle mainBundle] pathForResource:name ofType:@"gif"];
+        NSString *path = [[[ToolManager shareManager] subBundleWithBundleName] pathForResource:name ofType:@"gif"];
         
         data = [NSData dataWithContentsOfFile:path];
         
@@ -107,7 +107,7 @@
         return [UIImage imageNamed:name];
     }
     else {
-        NSString *path = [[NSBundle mainBundle] pathForResource:name ofType:@"gif"];
+        NSString *path = [[[ToolManager shareManager] subBundleWithBundleName] pathForResource:name ofType:@"gif"];
         
         NSData *data = [NSData dataWithContentsOfFile:path];
         
